@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { footerLinks } from '@/data/config/footerLinks';
 import { siteConfig } from '@/data/config/site.settings';
 import { Phone, Mail, MapPin, Linkedin, ArrowUpRight } from 'lucide-react';
@@ -16,14 +17,13 @@ export function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block mb-6">
-              <div className="flex items-center">
-                <span className="text-2xl font-bold text-white tracking-tight">
-                  Congruity
-                </span>
-                <span className="text-2xl font-light text-white/70 tracking-tight">
-                  HR
-                </span>
-              </div>
+              <Image
+                src="/static/images/logo.png"
+                alt="Congruity HR"
+                width={160}
+                height={66}
+                className="h-10 w-auto brightness-0 invert"
+              />
             </Link>
             <p className="text-white/70 text-sm leading-relaxed mb-6 max-w-sm">
               Your go-to resource for delivering an exceptional employee experience.

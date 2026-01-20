@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { CTASection } from '@/components/landing';
 import { Target, Users, Zap, Award, Heart, Shield } from 'lucide-react';
 
@@ -82,18 +83,35 @@ export default function AboutPage() {
                 </Link>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              {stats.map((stat, index) => (
-                <div
-                  key={index}
-                  className="bg-white rounded-card p-6 text-center shadow-card"
-                >
-                  <div className="text-3xl lg:text-4xl font-bold text-primary mb-2">
-                    {stat.value}
-                  </div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
+            <div className="relative">
+              {/* Main Image */}
+              <div className="relative rounded-3xl overflow-hidden shadow-card">
+                <Image
+                  src="/static/images/about/team-working.jpg"
+                  alt="Congruity HR team working together"
+                  width={1200}
+                  height={800}
+                  className="w-full h-[350px] lg:h-[450px] object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent" />
+              </div>
+
+              {/* Stats overlay */}
+              <div className="absolute -bottom-6 left-4 right-4 lg:left-6 lg:right-6">
+                <div className="grid grid-cols-4 gap-2 lg:gap-3">
+                  {stats.map((stat, index) => (
+                    <div
+                      key={index}
+                      className="bg-white rounded-xl p-3 lg:p-4 text-center shadow-card"
+                    >
+                      <div className="text-lg lg:text-2xl font-bold text-primary">
+                        {stat.value}
+                      </div>
+                      <div className="text-[10px] lg:text-xs text-muted-foreground">{stat.label}</div>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         </div>
@@ -177,24 +195,39 @@ export default function AboutPage() {
                 Explore Our Services
               </Link>
             </div>
-            <div className="bg-white rounded-3xl shadow-card p-8">
-              <div className="bg-cream-dark rounded-2xl p-6 mb-4 text-center">
-                <Award className="w-16 h-16 text-primary mx-auto mb-4" />
-                <h3 className="font-semibold text-foreground mb-2">
-                  iSolved Certified Partner
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Award-winning HCM platform trusted by thousands of businesses
-                </p>
+            <div className="relative">
+              <div className="rounded-3xl overflow-hidden shadow-card">
+                <Image
+                  src="/static/images/about/modern-office.jpg"
+                  alt="Modern office technology"
+                  width={1200}
+                  height={800}
+                  className="w-full h-[350px] lg:h-[400px] object-cover"
+                />
               </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-cream-dark rounded-xl p-4 text-center">
-                  <div className="text-2xl font-bold text-primary">24/7</div>
-                  <div className="text-xs text-muted-foreground">Support</div>
+              {/* Floating card */}
+              <div className="absolute -bottom-6 -left-4 lg:-left-6 bg-white rounded-2xl shadow-card p-4 lg:p-6">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-xl bg-brand-green/20 flex items-center justify-center">
+                    <Award className="w-6 h-6 text-brand-green" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-foreground">iSolved Partner</div>
+                    <div className="text-xs text-muted-foreground">Award-winning platform</div>
+                  </div>
                 </div>
-                <div className="bg-cream-dark rounded-xl p-4 text-center">
-                  <div className="text-2xl font-bold text-primary">100%</div>
-                  <div className="text-xs text-muted-foreground">Cloud-Based</div>
+              </div>
+              {/* Stats card */}
+              <div className="absolute -top-4 -right-4 lg:-right-6 bg-white rounded-2xl shadow-card p-3 lg:p-4">
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="text-center">
+                    <div className="text-xl lg:text-2xl font-bold text-primary">24/7</div>
+                    <div className="text-[10px] text-muted-foreground">Support</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-xl lg:text-2xl font-bold text-primary">100%</div>
+                    <div className="text-[10px] text-muted-foreground">Cloud</div>
+                  </div>
                 </div>
               </div>
             </div>

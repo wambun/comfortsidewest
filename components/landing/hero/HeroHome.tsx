@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, Play, CheckCircle } from 'lucide-react';
 import { useRef } from 'react';
 
@@ -145,55 +146,72 @@ export function HeroHome() {
             className="relative"
           >
             <div className="relative">
-              {/* Main card/image container */}
-              <div className="relative bg-white rounded-3xl shadow-card p-6 lg:p-8">
-                {/* Stats grid */}
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div className="bg-cream-dark rounded-2xl p-6 text-center">
-                    <div className="text-3xl lg:text-4xl font-bold text-primary mb-1">500+</div>
-                    <div className="text-sm text-muted-foreground">Companies Served</div>
-                  </div>
-                  <div className="bg-cream-dark rounded-2xl p-6 text-center">
-                    <div className="text-3xl lg:text-4xl font-bold text-primary mb-1">50K+</div>
-                    <div className="text-sm text-muted-foreground">Employees Supported</div>
-                  </div>
-                  <div className="bg-cream-dark rounded-2xl p-6 text-center">
-                    <div className="text-3xl lg:text-4xl font-bold text-primary mb-1">99%</div>
-                    <div className="text-sm text-muted-foreground">Client Retention</div>
-                  </div>
-                  <div className="bg-cream-dark rounded-2xl p-6 text-center">
-                    <div className="text-3xl lg:text-4xl font-bold text-primary mb-1">24/7</div>
-                    <div className="text-sm text-muted-foreground">Support Available</div>
-                  </div>
-                </div>
+              {/* Main image container */}
+              <div className="relative rounded-3xl overflow-hidden shadow-card">
+                <Image
+                  src="/static/images/hero/team-collaboration.jpg"
+                  alt="Team collaborating in modern office"
+                  width={1200}
+                  height={800}
+                  className="w-full h-[400px] lg:h-[500px] object-cover"
+                  priority
+                />
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-primary/20 to-transparent" />
 
-                {/* Testimonial preview */}
-                <div className="bg-primary rounded-2xl p-6 text-white">
-                  <div className="flex items-start gap-3">
-                    <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0 text-sm font-bold">
-                      KJ
+                {/* Stats overlay at bottom */}
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <div className="grid grid-cols-4 gap-3">
+                    <div className="text-center glass rounded-xl p-3">
+                      <div className="text-2xl lg:text-3xl font-bold text-white">500+</div>
+                      <div className="text-xs text-white/80">Companies</div>
                     </div>
-                    <div>
-                      <p className="text-sm text-white/90 italic mb-2">
-                        "We've been working with Congruity HR for many years and have always
-                        been impressed by their customer service and support!"
-                      </p>
-                      <p className="text-xs text-white/60">Kate Jones, HR Director</p>
+                    <div className="text-center glass rounded-xl p-3">
+                      <div className="text-2xl lg:text-3xl font-bold text-white">50K+</div>
+                      <div className="text-xs text-white/80">Employees</div>
+                    </div>
+                    <div className="text-center glass rounded-xl p-3">
+                      <div className="text-2xl lg:text-3xl font-bold text-white">99%</div>
+                      <div className="text-xs text-white/80">Retention</div>
+                    </div>
+                    <div className="text-center glass rounded-xl p-3">
+                      <div className="text-2xl lg:text-3xl font-bold text-white">24/7</div>
+                      <div className="text-xs text-white/80">Support</div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Floating badge with float animation */}
+              {/* Floating testimonial card */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ type: 'spring', stiffness: 100, damping: 20, delay: 0.6 }}
+                className="absolute -left-4 lg:-left-8 bottom-24 bg-white rounded-2xl shadow-card p-4 max-w-[280px] hidden lg:block animate-float hover-glow"
+              >
+                <div className="flex items-start gap-3">
+                  <div className="w-10 h-10 rounded-full bg-brand-cyan/20 flex items-center justify-center flex-shrink-0 text-sm font-bold text-brand-cyan">
+                    KJ
+                  </div>
+                  <div>
+                    <p className="text-sm text-foreground/80 italic mb-2">
+                      "Congruity HR's service and support is exceptional!"
+                    </p>
+                    <p className="text-xs text-muted-foreground">Kate Jones, HR Director</p>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Floating badge */}
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ type: 'spring', stiffness: 100, damping: 20, delay: 0.6 }}
+                transition={{ type: 'spring', stiffness: 100, damping: 20, delay: 0.7 }}
                 className="absolute -right-4 top-8 bg-white rounded-2xl shadow-card px-4 py-3 hidden lg:block animate-float-slow hover-glow"
               >
                 <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
-                    <CheckCircle className="w-4 h-4 text-green-600" />
+                  <div className="w-8 h-8 rounded-full bg-brand-green/20 flex items-center justify-center">
+                    <CheckCircle className="w-4 h-4 text-brand-green" />
                   </div>
                   <div>
                     <div className="text-xs text-muted-foreground">iSolved Certified</div>

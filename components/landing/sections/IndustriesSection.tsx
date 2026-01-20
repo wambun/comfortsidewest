@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   Building2,
   Stethoscope,
@@ -19,41 +20,49 @@ const industries = [
     icon: Building2,
     title: 'Professional Services',
     href: '/industries/professional-services',
+    image: '/static/images/industries/professional-services.jpg',
   },
   {
     icon: Stethoscope,
     title: 'Healthcare & Biotech',
     href: '/industries/healthcare',
+    image: '/static/images/industries/healthcare.jpg',
   },
   {
     icon: UtensilsCrossed,
     title: 'Hospitality & Resorts',
     href: '/industries/hospitality',
+    image: '/static/images/industries/retail.jpg',
   },
   {
     icon: Landmark,
     title: 'Financial Services',
     href: '/industries/financial-services',
+    image: '/static/images/industries/professional-services.jpg',
   },
   {
     icon: Factory,
     title: 'Manufacturing',
     href: '/industries/manufacturing',
+    image: '/static/images/industries/manufacturing.jpg',
   },
   {
     icon: ShoppingBag,
     title: 'Retail',
     href: '/industries/retail',
+    image: '/static/images/industries/retail.jpg',
   },
   {
     icon: GraduationCap,
     title: 'Education',
     href: '/industries/education',
+    image: '/static/images/industries/technology.jpg',
   },
   {
     icon: HeartHandshake,
     title: 'Non-Profits',
     href: '/industries/non-profits',
+    image: '/static/images/industries/healthcare.jpg',
   },
 ];
 
@@ -97,14 +106,29 @@ export function IndustriesSection() {
             >
               <Link
                 href={industry.href}
-                className="group block bg-white rounded-card p-6 text-center shadow-soft hover:shadow-card transition-all duration-300 hover:-translate-y-1"
+                className="group block relative bg-white rounded-card overflow-hidden shadow-soft hover:shadow-card transition-all duration-300 hover:-translate-y-1"
               >
-                <div className="w-16 h-16 mx-auto rounded-2xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                  <industry.icon className="w-8 h-8 text-primary group-hover:text-white transition-colors" />
+                {/* Background image - shows on hover */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <Image
+                    src={industry.image}
+                    alt={industry.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                  />
+                  <div className="absolute inset-0 bg-primary/80" />
                 </div>
-                <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">
-                  {industry.title}
-                </h3>
+
+                {/* Content */}
+                <div className="relative p-6 text-center">
+                  <div className="w-16 h-16 mx-auto rounded-2xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-white/20 transition-all duration-300">
+                    <industry.icon className="w-8 h-8 text-primary group-hover:text-white transition-colors" />
+                  </div>
+                  <h3 className="font-semibold text-foreground group-hover:text-white transition-colors">
+                    {industry.title}
+                  </h3>
+                </div>
               </Link>
             </motion.div>
           ))}

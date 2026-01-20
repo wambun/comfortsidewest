@@ -97,6 +97,23 @@ module.exports = {
           light: '#35625d',
           dark: '#143632',
         },
+        // Logo brand colors (the three interlocking circles)
+        'brand-blue': {
+          DEFAULT: customColors.brand.blue.main,
+          light: customColors.brand.blue.light,
+          dark: customColors.brand.blue.dark,
+        },
+        'brand-cyan': {
+          DEFAULT: customColors.brand.cyan.main,
+          light: customColors.brand.cyan.light,
+          dark: customColors.brand.cyan.dark,
+        },
+        'brand-green': {
+          DEFAULT: customColors.brand.green.main,
+          light: customColors.brand.green.light,
+          dark: customColors.brand.green.dark,
+        },
+        charcoal: customColors.brand.charcoal,
         // Shadcn UI tokens
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',

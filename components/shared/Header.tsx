@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { headerNavLinks } from '@/data/config/headerNavLinks';
@@ -40,15 +41,15 @@ export function Header() {
       <div className="container-main">
         <nav className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="flex items-center">
-              <span className="text-2xl font-bold text-primary tracking-tight">
-                Congruity
-              </span>
-              <span className="text-2xl font-light text-primary/70 tracking-tight">
-                HR
-              </span>
-            </div>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/static/images/logo.png"
+              alt="Congruity HR - Your Business Optimized"
+              width={180}
+              height={74}
+              className="h-12 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}
