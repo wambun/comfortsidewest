@@ -8,3 +8,4 @@ export { TestimonialsSection } from './sections/TestimonialsSection';
 export { CTASection } from './sections/CTASection';
 export { WhyChooseUsSection } from './sections/WhyChooseUsSection';
 export { FAQSection } from './sections/FAQSection';
+export { TeamSection } from './sections/TeamSection';

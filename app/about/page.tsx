@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { CTASection } from '@/components/landing';
+import { CTASection, TeamSection } from '@/components/landing';
 import { Target, Users, Zap, Award, Heart, Shield } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -160,8 +160,11 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Team Section */}
+      <TeamSection />
+
       {/* Technology Section */}
-      <section className="section bg-cream">
+      <section className="section bg-cream-dark">
         <div className="container-main">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
