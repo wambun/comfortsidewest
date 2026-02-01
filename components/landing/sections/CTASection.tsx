@@ -20,9 +20,9 @@ interface CTASectionProps {
 
 export function CTASection({
   variant = 'default',
-  title = 'Ready to transform your HR?',
-  description = "Take the first step toward building your dream team. Start with Congruity HR today and experience world-class HR support.",
-  primaryCTA = { text: 'Book a Demo', href: '/book-demo' },
+  title = 'Ready to Partner with Comfortside West?',
+  description = "Join hundreds of HVAC contractors and dealers who trust us for premium ductless systems, competitive pricing, and exceptional support.",
+  primaryCTA = { text: 'Become a Dealer', href: '/dealer-program' },
   secondaryCTA = { text: 'Contact Us', href: '/contact' },
 }: CTASectionProps) {
   const bgClass =
@@ -94,13 +94,13 @@ export function CTASection({
             className="mt-8"
           >
             <a
-              href="tel:8442474100"
+              href="tel:8009107349"
               className={`inline-flex items-center gap-2 ${
                 variant === 'light' ? 'text-muted-foreground' : 'text-white/70'
               } hover:${variant === 'light' ? 'text-primary' : 'text-white'} transition-colors`}
             >
               <Phone className="w-4 h-4" />
-              Or call us at 844-247-4100
+              Or call us at 800-910-7349
             </a>
           </motion.div>
         </motion.div>

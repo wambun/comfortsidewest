@@ -3,54 +3,36 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import {
-  Users,
-  FileText,
-  Shield,
-  Heart,
-  Briefcase,
+  Home,
+  Building2,
+  Layers,
   ArrowRight,
 } from 'lucide-react';
 
-const services = [
+const products = [
   {
-    icon: Users,
-    title: 'PEO Services',
+    icon: Home,
+    title: 'Residential Systems',
     description:
-      'Let us handle all your payroll, benefits, and HR support needs with our comprehensive PEO solutions.',
-    href: '/services/peo-services',
+      'Single and multi-zone mini-split systems perfect for homes. Energy-efficient cooling and heating solutions.',
+    href: '/products/residential',
     iconBg: 'bg-primary/10',
   },
   {
-    icon: FileText,
-    title: 'ASO Services',
+    icon: Building2,
+    title: 'Commercial/VRF',
     description:
-      'Just need the basics? Our ASO model provides flexible HR outsourcing while you maintain control.',
-    href: '/services/aso-services',
+      'Variable Refrigerant Flow systems for commercial applications. Scalable solutions for any building size.',
+    href: '/products/commercial',
     iconBg: 'bg-accent/10',
   },
   {
-    icon: Briefcase,
-    title: 'HR Solutions',
+    icon: Layers,
+    title: 'All-in-One Units',
     description:
-      'From recruiting to retirement, and everything in-between. Complete HR lifecycle management.',
-    href: '/services/hr-solutions',
+      'Integrated heating and cooling solutions. Simple installation with comprehensive climate control.',
+    href: '/products/all-in-one',
     iconBg: 'bg-primary/15',
-  },
-  {
-    icon: Heart,
-    title: 'Employee Benefits',
-    description:
-      'Comprehensive benefits packages that attract and retain top talent with healthcare and perks.',
-    href: '/services/employee-benefits',
-    iconBg: 'bg-accent/10',
-  },
-  {
-    icon: Shield,
-    title: 'Compliance & Risk',
-    description:
-      'Navigate complex labor laws and regulations with confidence. Stay compliant, reduce risk.',
-    href: '/services/compliance-risk',
-    iconBg: 'bg-primary/10',
   },
 ];
 
@@ -91,49 +73,48 @@ export function ServicesSection() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12 lg:mb-16"
         >
-          <span className="badge badge-primary mb-4">Our Services</span>
+          <span className="badge badge-primary mb-4">Our Products</span>
           <h2 className="text-h2 text-primary mb-4">
-            Comprehensive <span className="text-gradient-primary">HR Solutions</span>
+            Ductless <span className="text-gradient-primary">HVAC Solutions</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Congruity HR is much more than just a PEO provider. We're a true extension
-            of your team, delivering world-class HR services.
+            We offer a complete range of ductless mini-split systems to meet every
+            residential and commercial need. All backed by industry-leading warranties.
           </p>
         </motion.div>
 
-        {/* Services Grid */}
+        {/* Products Grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
         >
-          {services.map((service) => (
-            <motion.div key={service.title} variants={itemVariants}>
+          {products.map((product) => (
+            <motion.div key={product.title} variants={itemVariants}>
               <Link
-                href={service.href}
+                href={product.href}
                 className="group block card-premium p-8 h-full relative overflow-hidden"
               >
-                {/* Subtle gradient overlay on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-card" />
 
                 <div className="relative z-10">
                   <motion.div
                     whileHover={{ scale: 1.1, rotate: 3 }}
                     transition={{ type: 'spring', stiffness: 300, damping: 15 }}
-                    className={`w-14 h-14 rounded-2xl ${service.iconBg} flex items-center justify-center mb-6 icon-glow`}
+                    className={`w-14 h-14 rounded-2xl ${product.iconBg} flex items-center justify-center mb-6 icon-glow`}
                   >
-                    <service.icon className="w-7 h-7 text-primary" />
+                    <product.icon className="w-7 h-7 text-primary" />
                   </motion.div>
                   <h3 className="text-xl font-semibold text-primary mb-3 group-hover:text-primary/80 transition-colors">
-                    {service.title}
+                    {product.title}
                   </h3>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
-                    {service.description}
+                    {product.description}
                   </p>
                   <div className="flex items-center gap-2 text-primary font-medium text-sm group-hover:gap-3 transition-all">
-                    Learn more
+                    View Products
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
@@ -145,16 +126,16 @@ export function ServicesSection() {
           <motion.div variants={itemVariants}>
             <div className="bg-primary rounded-card p-8 h-full flex flex-col justify-center text-white">
               <h3 className="text-2xl font-semibold mb-4">
-                Not sure which service is right for you?
+                Need help choosing the right system?
               </h3>
               <p className="text-white/80 mb-6">
-                Let our experts help you find the perfect HR solution for your business.
+                Our team can help you find the perfect HVAC solution for any project.
               </p>
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 bg-white text-primary rounded-button px-6 py-3 font-medium hover:bg-cream transition-colors group"
               >
-                Let's Talk
+                Contact Us
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>

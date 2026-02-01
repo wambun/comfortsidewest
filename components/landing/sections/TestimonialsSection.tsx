@@ -8,26 +8,26 @@ const testimonials = [
   {
     id: 1,
     quote:
-      "We've been working with Congruity HR for many years now and have always been impressed by their customer service, support, and assistance! They are very responsive to any questions we may have and run our payroll flawlessly!",
-    name: 'Kate Jones',
-    role: 'HR Director',
-    initials: 'KJ',
+      "Comfortside West has been our go-to distributor for mini-splits. Their pricing is competitive, shipping is fast, and the technical support team really knows their stuff. They've helped us grow our HVAC business significantly.",
+    name: 'John Martinez',
+    role: 'HVAC Contractor, Phoenix AZ',
+    initials: 'JM',
   },
   {
     id: 2,
     quote:
-      "We hired CONGRUITY HR in March 2020 after months of searching for a new PEO for our company. Congruity HR has been AWESOME - they have exceeded our expectations and we wish we would have moved to them sooner.",
-    name: 'Reagen Wilkins',
-    role: 'Operations Manager',
-    initials: 'RW',
+      "We switched to Comfortside West last year and couldn't be happier. The dealer program benefits are excellent, and having a dedicated account manager makes ordering so much easier. Highly recommend!",
+    name: 'Sarah Chen',
+    role: 'Owner, Cool Air Solutions',
+    initials: 'SC',
   },
   {
     id: 3,
     quote:
-      "I have used Congruity for over 2 years now. I started out with only a few employees and am now up to about 30. Their customer service is excellent, and they are always willing to help find a solution. I highly recommend them!",
-    name: 'Adam Wells',
-    role: 'Business Owner',
-    initials: 'AW',
+      "The quality of Cooper&Hunter and Olmo products from Comfortside West is outstanding. Our customers love the reliability, and we love the warranty support. A true partnership.",
+    name: 'Mike Roberts',
+    role: 'Service Manager, Texas Climate Co',
+    initials: 'MR',
   },
 ];
 
@@ -57,11 +57,11 @@ export function TestimonialsSection() {
             Testimonials
           </span>
           <h2 className="text-h2 text-white mb-4">
-            What Our Clients Say
+            What Our Dealers Say
           </h2>
           <p className="text-lg text-white/70 max-w-2xl mx-auto">
-            Don't just take our word for it. Here's what businesses like yours
-            have to say about working with Congruity HR.
+            Don't just take our word for it. Here's what HVAC contractors and
+            dealers have to say about partnering with Comfortside West.
           </p>
         </motion.div>
 

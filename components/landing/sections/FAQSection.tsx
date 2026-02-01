@@ -7,34 +7,34 @@ import Link from 'next/link';
 
 const faqs = [
   {
-    question: 'What is a PEO and how does it work?',
+    question: 'What brands do you carry?',
     answer:
-      'A Professional Employer Organization (PEO) is a company that provides comprehensive HR services to small and medium-sized businesses. When you partner with Congruity HR, we become your co-employer, handling payroll, benefits administration, compliance, and HR support while you maintain control of your day-to-day operations.',
+      'We are an authorized distributor for three premium HVAC brands: Cooper&Hunter, Olmo, and Bravo. Each brand offers different features and price points to meet various customer needs, from budget-friendly options to premium systems with advanced features.',
   },
   {
-    question: 'What is the difference between PEO and ASO services?',
+    question: 'How do I become a dealer?',
     answer:
-      'With PEO services, Congruity becomes a co-employer and takes on more HR responsibilities and liabilities. ASO (Administrative Services Organization) allows you to outsource HR tasks like payroll processing and benefits administration while maintaining full employer status and keeping your own benefits plans.',
+      'Becoming a Comfortside West dealer is easy. Simply fill out our dealer application form or contact our sales team. Once approved, you\'ll get access to wholesale pricing, dedicated account management, marketing support, and priority inventory access.',
   },
   {
-    question: 'How long does it take to get started with Congruity HR?',
+    question: 'What areas do you serve?',
     answer:
-      'Our onboarding process is designed to be efficient and thorough. Most clients are fully operational within 2-4 weeks, depending on the complexity of your needs and how quickly we can gather the necessary information.',
+      'We primarily serve the Western United States, with fast shipping to California, Texas, Arizona, Nevada, Colorado, and surrounding states. Most orders ship within 24-48 hours, and we offer competitive freight rates for bulk orders.',
   },
   {
-    question: 'What industries do you specialize in?',
+    question: 'Do you offer technical support?',
     answer:
-      'We serve a wide range of industries including professional services, healthcare, hospitality, financial services, manufacturing, retail, education, non-profits, and more. Our team understands the unique HR challenges each industry faces.',
+      'Yes! Our technical support team is available to help with installation questions, troubleshooting, and warranty claims. We also offer product training sessions and technical documentation for all our dealers.',
   },
   {
-    question: 'What kind of support can I expect?',
+    question: 'What warranties are available?',
     answer:
-      "You'll have a dedicated support team available to assist you. We pride ourselves on lightning-fast response times and round-the-clock availability. Unlike larger PEOs, you won't get passed around - your dedicated team knows your business.",
+      'Warranty coverage varies by brand and product. Cooper&Hunter offers up to 10-year warranties on compressors, Olmo provides 7-year coverage, and Bravo offers 5-year warranties. All products include standard manufacturer warranty support through our dealership.',
   },
   {
-    question: 'How does Congruity help with compliance?',
+    question: 'Do you offer volume discounts?',
     answer:
-      'Our compliance experts stay current on federal and state employment laws, helping you navigate complex regulations. We handle tax filings, maintain proper documentation, and alert you to regulatory changes that affect your business.',
+      'Absolutely. We offer tiered pricing based on order volume and dealer status. Our dealer program includes multiple pricing tiers, and high-volume contractors can qualify for additional discounts and rebates.',
   },
 ];
 
@@ -58,8 +58,8 @@ export function FAQSection() {
               Common Questions
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Have questions about our HR services? We've compiled answers to the
-              most frequently asked questions below.
+              Have questions about our products or dealer program? We've compiled
+              answers to the most frequently asked questions below.
             </p>
             <Link
               href="/contact"

@@ -2,6 +2,7 @@
 export { HeroHome } from './hero/HeroHome';
 
 // Section components
+export { BrandsSection } from './sections/BrandsSection';
 export { CTASection } from './sections/CTASection';
 export { FAQSection } from './sections/FAQSection';
 export { IndustriesSection } from './sections/IndustriesSection';

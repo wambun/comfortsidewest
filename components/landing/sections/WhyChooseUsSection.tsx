@@ -1,44 +1,44 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Target, Users, Zap, HeadphonesIcon, TrendingUp, Award } from 'lucide-react';
+import { Truck, Users, DollarSign, HeadphonesIcon, Package, Award } from 'lucide-react';
 
 const features = [
   {
-    icon: Target,
-    title: 'It all starts with your goals',
+    icon: DollarSign,
+    title: 'Competitive Wholesale Pricing',
     description:
-      'We take the time to learn about where you want to be, then develop a bespoke program to get you there.',
+      'Get the best prices on premium HVAC systems. Volume discounts and dealer incentives available.',
+  },
+  {
+    icon: Truck,
+    title: 'Fast Western US Shipping',
+    description:
+      'Quick delivery across the Western United States. Most orders ship within 24-48 hours.',
+  },
+  {
+    icon: Package,
+    title: 'Large Inventory Selection',
+    description:
+      'Extensive stock of residential and commercial units. Find exactly what your customers need.',
   },
   {
     icon: Users,
-    title: 'Dedicated support team',
+    title: 'Dedicated Account Managers',
     description:
-      "You'll always have a dedicated member of our team to ensure things run smoothly. No big-box runaround.",
-  },
-  {
-    icon: TrendingUp,
-    title: 'We track trends so you don\'t have to',
-    description:
-      'Our team keeps up to speed on HR legislation and compliance at both state and federal levels.',
-  },
-  {
-    icon: Zap,
-    title: 'Game-changing technology',
-    description:
-      'Our iSolved-powered platform delivers diverse functionality to managers and employees alike.',
+      'Personal support from experienced HVAC professionals who understand your business needs.',
   },
   {
     icon: HeadphonesIcon,
-    title: 'Lightning-fast response times',
+    title: 'Technical Support',
     description:
-      "Round-the-clock support means you never have to go it alone. We're here when you need us.",
+      'Expert technical assistance for installation questions, troubleshooting, and warranty claims.',
   },
   {
     icon: Award,
-    title: 'Award-winning platform',
+    title: 'Exclusive Dealer Program',
     description:
-      'Our technology backbone serves as a one-stop-shop for everything you need, from hire to retire.',
+      'Access special pricing tiers, marketing support, and priority inventory for registered dealers.',
   },
 ];
 
@@ -58,14 +58,14 @@ export function WhyChooseUsSection() {
             viewport={{ once: true }}
             transition={{ type: 'spring', stiffness: 100, damping: 20 }}
           >
-            <span className="badge badge-primary mb-4">Why Congruity</span>
+            <span className="badge badge-primary mb-4">Why Comfortside West</span>
             <h2 className="text-h2 text-primary mb-6">
-              What Makes Us <span className="text-gradient-primary">Different</span>
+              Your Trusted <span className="text-gradient-primary">HVAC Partner</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              When it comes to selecting a PEO, ASO, or HR outsourcing provider, we know
-              you have plenty of choices. That's why we consistently go above-and-beyond
-              for our clients, earning your business each and every day.
+              As a leading wholesale distributor of ductless HVAC systems, we're committed
+              to helping contractors and dealers succeed with competitive pricing, reliable
+              inventory, and exceptional support.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-6">
@@ -110,12 +110,12 @@ export function WhyChooseUsSection() {
               {/* Stats */}
               <div className="grid grid-cols-2 gap-6 mb-8">
                 <div className="text-center p-6 bg-cream-dark rounded-2xl">
-                  <div className="text-4xl font-bold text-primary mb-2">20+</div>
-                  <div className="text-sm text-muted-foreground">Years of Experience</div>
+                  <div className="text-4xl font-bold text-primary mb-2">15+</div>
+                  <div className="text-sm text-muted-foreground">Years in Business</div>
                 </div>
                 <div className="text-center p-6 bg-cream-dark rounded-2xl">
                   <div className="text-4xl font-bold text-primary mb-2">500+</div>
-                  <div className="text-sm text-muted-foreground">Satisfied Clients</div>
+                  <div className="text-sm text-muted-foreground">Active Dealers</div>
                 </div>
               </div>
 

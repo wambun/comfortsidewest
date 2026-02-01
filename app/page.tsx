@@ -1,7 +1,7 @@
 import {
   HeroHome,
   ServicesSection,
-  IndustriesSection,
+  BrandsSection,
   TestimonialsSection,
   WhyChooseUsSection,
   FAQSection,
@@ -13,14 +13,14 @@ export default function Home() {
     <>
       <HeroHome />
       <ServicesSection />
+      <BrandsSection />
       <WhyChooseUsSection />
-      <IndustriesSection />
       <TestimonialsSection />
       <FAQSection />
       <CTASection
-        title="Ready to transform your HR?"
-        description="Take the first step toward building your dream team. Start with Congruity HR today and experience world-class HR support."
-        primaryCTA={{ text: 'Book a Demo', href: '/book-demo' }}
+        title="Ready to Partner with Comfortside West?"
+        description="Join hundreds of HVAC contractors and dealers who trust us for premium ductless systems, competitive pricing, and exceptional support."
+        primaryCTA={{ text: 'Become a Dealer', href: '/dealer-program' }}
         secondaryCTA={{ text: 'Contact Us', href: '/contact' }}
       />
     </>
