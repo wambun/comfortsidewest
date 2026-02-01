@@ -1,44 +1,52 @@
-/* Congruity HR Color Theme - Matched to Logo Colors */
+/* Comfortside West Color Theme - Jurri Template Inspired */
 const colors = {
-  // Primary: Dark Blue from logo icon (dominant brand color)
+  // Primary: Deep Navy (from Jurri template)
   primary: {
-    lighter: '#3D6A99',
-    light: '#1A5A9E',
-    main: '#0C3B6A',
-    dark: '#082B4E',
-    darker: '#051C33',
+    lighter: '#1b273a',
+    light: '#132030',
+    main: '#0d1c29',
+    dark: '#091318',
+    darker: '#050a0d',
   },
-  // Accent: Cyan from logo icon (for CTAs, links, highlights)
+  // Accent: Warm Gold (from Jurri template - CTAs, links, highlights)
   accent: {
-    lighter: '#66C2F0',
-    light: '#33ADEE',
-    main: '#0099DB',
-    dark: '#007AAF',
-    darker: '#005C83',
+    lighter: '#e8d9c6',
+    light: '#d4c0a5',
+    main: '#c5a788',
+    dark: '#a68a6a',
+    darker: '#87704f',
   },
-  // Success: Green from logo icon (sparingly - success states only)
+  // Success: Soft green for success states
   success: {
-    lighter: '#9DD49A',
-    light: '#7BBE77',
-    main: '#5AAD55',
-    dark: '#489444',
-    darker: '#367033',
+    lighter: '#d1fae5',
+    light: '#a7f3d0',
+    main: '#34d399',
+    dark: '#10b981',
+    darker: '#059669',
   },
-  // Neutral: Charcoal from logo text
+  // Neutral: Slate tones for text and borders
   neutral: {
-    lighter: '#9CA3AF',
-    light: '#6B7280',
-    main: '#42494D',
-    dark: '#2D3236',
-    darker: '#1A1D1F',
+    lighter: '#f1f5f9',
+    light: '#e2e8f0',
+    main: '#94a3b8',
+    dark: '#64748b',
+    darker: '#475569',
   },
   // Background colors
   secondary: {
-    lighter: '#fffff5',
-    light: '#fffffb',
-    main: '#f7f7f7',
-    dark: '#e9eaeb',
+    lighter: '#ffffff',
+    light: '#f9f9f9',
+    main: '#f1f5f9',
+    dark: '#e8eded',
     darker: '#d1d5db',
+  },
+  // Cream tones (warm light backgrounds)
+  cream: {
+    lighter: '#fefdfb',
+    light: '#faf8f5',
+    main: '#ead3bc',
+    dark: '#d4bc9f',
+    darker: '#bea582',
   },
 };
 

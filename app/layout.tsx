@@ -1,4 +1,4 @@
-import { Inter } from 'next/font/google';
+import { Inter, Montserrat, Frank_Ruhl_Libre } from 'next/font/google';
 import { siteConfig } from '@/data/config/site.settings';
 import { ThemeProviders } from './theme-providers';
 import { Metadata } from 'next';
@@ -6,13 +6,27 @@ import { Metadata } from 'next';
 import '@/css/globals.css';
 import { SearchProvider } from '@/components/shared/SearchProvider';
 import { AnalyticsWrapper } from '@/components/shared/Analytics';
-import { Header } from '@/components/shared/Header';
-import { Footer } from '@/components/shared/Footer';
+import Header from '@/components/shared/Header';
+import Footer from '@/components/shared/Footer';
 
 const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-inter',
+});
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-montserrat',
+  weight: ['400', '500', '600', '700'],
+});
+
+const frankRuhlLibre = Frank_Ruhl_Libre({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-frank-ruhl',
+  weight: ['300', '400', '500', '700'],
 });
 
 export const metadata: Metadata = {
@@ -63,7 +77,7 @@ export default function RootLayout({
   return (
     <html
       lang={siteConfig.language}
-      className={`${inter.variable} scroll-smooth`}
+      className={`${inter.variable} ${montserrat.variable} ${frankRuhlLibre.variable} scroll-smooth`}
       suppressHydrationWarning
     >
       <head>

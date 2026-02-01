@@ -168,3 +168,164 @@ export const parallaxValues = {
 // Viewport settings for whileInView
 export const viewportOnce = { once: true, margin: '-100px' };
 export const viewportRepeat = { once: false, margin: '-100px' };
+
+// ============================================
+// Jurri Template-Inspired Premium Animations
+// ============================================
+
+// Smooth fade in (no movement)
+export const fadeIn: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: 'easeOut',
+    },
+  },
+};
+
+// Premium card reveal (subtle lift + fade)
+export const cardReveal: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.25, 0.1, 0.25, 1],
+    },
+  },
+};
+
+// Stagger with faster timing for grids
+export const staggerFast: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.08,
+      delayChildren: 0.05,
+    },
+  },
+};
+
+// Hero text animation (large headings)
+export const heroText: Variants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: [0.25, 0.1, 0.25, 1],
+    },
+  },
+};
+
+// Section label animation (small text above headings)
+export const sectionLabel: Variants = {
+  hidden: { opacity: 0, y: 10 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.4,
+      ease: 'easeOut',
+    },
+  },
+};
+
+// Button hover with subtle lift
+export const buttonHover = {
+  rest: { scale: 1, y: 0 },
+  hover: {
+    scale: 1.02,
+    y: -2,
+    transition: {
+      duration: 0.2,
+      ease: 'easeOut',
+    },
+  },
+  tap: {
+    scale: 0.98,
+    y: 0,
+    transition: {
+      duration: 0.1,
+    },
+  },
+};
+
+// Link underline expand (for nav links)
+export const linkUnderline = {
+  rest: { width: 0 },
+  hover: {
+    width: '100%',
+    transition: {
+      duration: 0.3,
+      ease: [0.25, 0.1, 0.25, 1],
+    },
+  },
+};
+
+// Image reveal (scale from slightly larger)
+export const imageReveal: Variants = {
+  hidden: { opacity: 0, scale: 1.05 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      ease: [0.25, 0.1, 0.25, 1],
+    },
+  },
+};
+
+// Container for page transitions
+export const pageTransition: Variants = {
+  initial: { opacity: 0, y: 20 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.25, 0.1, 0.25, 1],
+      staggerChildren: 0.1,
+    },
+  },
+  exit: {
+    opacity: 0,
+    y: -10,
+    transition: {
+      duration: 0.3,
+    },
+  },
+};
+
+// Float animation for decorative elements
+export const floatAnimation: Variants = {
+  animate: {
+    y: [0, -10, 0],
+    transition: {
+      duration: 6,
+      repeat: Infinity,
+      ease: 'easeInOut',
+    },
+  },
+};
+
+// Gold glow pulse (for accent elements)
+export const goldGlow = {
+  animate: {
+    boxShadow: [
+      '0 0 20px rgba(197, 167, 136, 0.1)',
+      '0 0 40px rgba(197, 167, 136, 0.25)',
+      '0 0 20px rgba(197, 167, 136, 0.1)',
+    ],
+    transition: {
+      duration: 2,
+      repeat: Infinity,
+      ease: 'easeInOut',
+    },
+  },
+};

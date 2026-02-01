@@ -1,36 +1,240 @@
 {
-  "old": {
-    "site": "",
-    "discoveredAt": "",
-    "extractionMethod": "",
-    "totalPages": 0,
-    "extractedPages": 0,
-    "failedPages": 0,
-    "pages": [],
-    "assets": {
-      "images": [],
-      "documents": []
-    },
-    "navigation": [],
-    "status": "pending"
+  "project": "Comfortside West Website Redesign",
+  "extractedAt": "2026-02-01",
+  "sourceUrl": "https://comfortsidewest.com/",
+
+  "company": {
+    "name": "Comfortside West LLC",
+    "tagline": "Your Trusted Source for Wholesale Ductless Air Conditioning Systems",
+    "description": "At Comfortside West LLC, we proudly offer top-tier mini split systems from leading brands like Cooper&Hunter, Olmo, and Bravo. Each brand delivers exceptional efficiency, reliability, and advanced features, ensuring you find the perfect solution to meet your home's unique climate control needs.",
+    "valuePropositions": [
+      {
+        "title": "High Quality",
+        "description": "Top-tier mini split systems from leading brands"
+      },
+      {
+        "title": "Cost-Effective",
+        "description": "Wholesale prices without compromising on quality"
+      },
+      {
+        "title": "New Technologies",
+        "description": "Advanced technology and customizable settings"
+      }
+    ]
   },
-  "new": {
-    "site": "",
-    "discoveredAt": "",
-    "extractionMethod": "",
-    "screenshots": [],
-    "designTokens": {
-      "colors": {},
-      "typography": {},
-      "spacing": {},
-      "animations": []
+
+  "contact": {
+    "phone": "800-910-7349",
+    "email": "West@comfortside.com",
+    "address": {
+      "street": "3900 N Dallas Ave Ste 300",
+      "city": "Lancaster",
+      "state": "TX",
+      "zip": "75134"
     },
-    "components": [],
-    "status": "pending"
+    "hours": {
+      "days": "Monday - Friday",
+      "times": "8am to 5pm"
+    },
+    "social": {
+      "facebook": "https://www.facebook.com/people/Comfortside-West-LLC/61556712921612/",
+      "linkedin": "https://www.linkedin.com/company/comfortside-west-llc/"
+    }
   },
-  "mapping": {
-    "complete": false,
-    "pageMapping": [],
-    "contentMapping": []
+
+  "brands": [
+    {
+      "id": "cooper-hunter",
+      "name": "Cooper&Hunter",
+      "description": "Cooper&Hunter is a distinguished leader in the HVAC industry, renowned for its innovative and high-performance mini split systems. With over 20 years of experience, the brand has established a reputation for delivering reliable, energy-efficient solutions designed to enhance comfort and convenience.",
+      "features": [
+        "Over 20 years of experience",
+        "Innovative mini split systems",
+        "High-performance",
+        "Energy-efficient solutions"
+      ],
+      "website": "https://cooperandhunter.us/",
+      "dealerProgramEmail": "info@cooperandhunter.us"
+    },
+    {
+      "id": "olmo",
+      "name": "Olmo",
+      "description": "Olmo is a dynamic brand in the HVAC market, recognized for delivering high-quality mini split systems that balance advanced technology with affordability. Their systems are designed for energy efficiency, quiet operation, and sleek aesthetics, providing reliable comfort while keeping your budget in mind.",
+      "features": [
+        "Advanced technology with affordability",
+        "Energy efficiency",
+        "Quiet operation",
+        "Sleek aesthetics"
+      ],
+      "website": "https://olmo-comfort.com/"
+    },
+    {
+      "id": "bravo",
+      "name": "Bravo",
+      "description": "Bravo is a standout brand in the mini split market, known for its exceptional affordability and reliable performance. Offering budget-friendly climate control solutions, Bravo combines cost-effectiveness with quality, making it an ideal choice for homeowners seeking efficient heating and cooling without a high price tag.",
+      "features": [
+        "Exceptional affordability",
+        "Reliable performance",
+        "Budget-friendly",
+        "Cost-effectiveness with quality"
+      ],
+      "website": "https://acbravo.com/"
+    }
+  ],
+
+  "productCategories": [
+    {
+      "id": "residential",
+      "name": "Residential",
+      "description": "Ductless AC solutions for home use"
+    },
+    {
+      "id": "commercial-vrf",
+      "name": "Commercial/VRF",
+      "description": "Variable Refrigerant Flow systems for larger installations"
+    },
+    {
+      "id": "all-in-one",
+      "name": "All in One",
+      "description": "Integrated cooling solutions"
+    }
+  ],
+
+  "dealerProgram": {
+    "name": "Cooper&Hunter Pro-Tech Dealer Program",
+    "description": "Designed to reward HVAC contractors for their loyalty through multiple incentive tiers",
+    "tiers": [
+      {
+        "name": "Bronze",
+        "icon": "🥉",
+        "requirement": "20 systems/year"
+      },
+      {
+        "name": "Silver",
+        "icon": "🥈",
+        "requirement": "50 systems/year"
+      },
+      {
+        "name": "Gold",
+        "icon": "🥇",
+        "requirement": "100 systems/year"
+      }
+    ],
+    "benefits": {
+      "financial": [
+        "Cash back on qualifying purchases",
+        "Points earned toward merchandise or cash with each transaction",
+        "Extended warranty coverage up to 3 years on registered systems"
+      ],
+      "support": [
+        "Marketing materials and branded support",
+        "Contractor locator listing",
+        "Certificate of excellence",
+        "Access to training videos, tutorials, and Cooper&Hunter University courses",
+        "Exclusive events for Gold members (travel costs covered, includes C&H HQ visits)"
+      ]
+    },
+    "formFields": [
+      "Business name",
+      "Contact information",
+      "Number of technicians employed",
+      "Current wholesale distributor",
+      "Brands currently sold",
+      "Service location details"
+    ]
+  },
+
+  "pages": [
+    {
+      "path": "/",
+      "title": "Home",
+      "sections": ["hero", "value-props", "about", "brands", "why-choose-us", "categories", "facebook-feed"]
+    },
+    {
+      "path": "/brands",
+      "title": "Brands",
+      "sections": ["brands-grid"]
+    },
+    {
+      "path": "/products",
+      "title": "Products",
+      "sections": ["categories-grid", "product-listings"]
+    },
+    {
+      "path": "/cooperhunter-dealer-program",
+      "title": "Cooper&Hunter Dealer Program",
+      "sections": ["program-overview", "tiers", "benefits", "signup-form"]
+    },
+    {
+      "path": "/contact-us",
+      "title": "Contact Us",
+      "sections": ["contact-form", "contact-info", "map"]
+    },
+    {
+      "path": "/about-us",
+      "title": "About Us",
+      "sections": ["company-story", "mission", "team"]
+    }
+  ],
+
+  "navigation": {
+    "header": [
+      { "label": "Home", "path": "/" },
+      { "label": "Brands", "path": "/brands" },
+      { "label": "Products", "path": "/products" },
+      { "label": "Cooper&Hunter Dealer Program", "path": "/dealer-program" }
+    ],
+    "cta": { "label": "Contact Us", "path": "/contact" },
+    "footer": {
+      "company": [
+        { "label": "Home", "path": "/" },
+        { "label": "About Us", "path": "/about" },
+        { "label": "Brands", "path": "/brands" },
+        { "label": "Products", "path": "/products" },
+        { "label": "News", "path": "/news" }
+      ]
+    }
+  },
+
+  "hero": {
+    "welcome": "Welcome to Comfortside West",
+    "headline": "Upgrade your home's comfort with our energy-efficient mini split units, offering precise climate control and quiet operation for any room.",
+    "description": "Discover the perfect solution for year-round comfort with our state-of-the-art mini split AC units. These versatile systems provide efficient cooling and heating with precise temperature control, ensuring every corner of your home stays comfortable.",
+    "cta": {
+      "label": "Explore Now",
+      "path": "/products"
+    }
+  },
+
+  "whyChooseUs": {
+    "title": "Your Premier Destination for Wholesale Ductless Air Conditioning Systems",
+    "points": [
+      {
+        "title": "Wide Selection",
+        "description": "We offer a diverse range of high-quality ductless air conditioning systems to meet your specific needs."
+      },
+      {
+        "title": "Competitive Pricing",
+        "description": "Enjoy wholesale prices without compromising on quality, ensuring maximum value for your investment."
+      },
+      {
+        "title": "Expertise",
+        "description": "With years of industry experience, our team is knowledgeable and dedicated to providing superior service and support."
+      }
+    ],
+    "cta": {
+      "label": "Become An Approved Vendor",
+      "path": "/contact"
+    }
+  },
+
+  "legal": {
+    "copyright": "Copyright © Comfortside West LLC 2024. All rights reserved.",
+    "privacyPolicy": "/privacy-policy",
+    "termsConditions": "/terms"
+  },
+
+  "externalLinks": {
+    "bbb": "https://www.bbb.org/us/tx/lancaster/profile/ductless-ac/comfortside-west-llc-0875-91342427"
   }
 }

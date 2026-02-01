@@ -62,62 +62,78 @@ module.exports = {
         'body-sm': ['14px', { lineHeight: '1.5' }],
       },
       fontFamily: {
-        sans: ['var(--font-inter)', ...fontFamily.sans],
-        display: ['var(--font-inter)', ...fontFamily.sans],
+        sans: ['var(--font-montserrat)', 'var(--font-inter)', ...fontFamily.sans],
+        display: ['var(--font-frank-ruhl)', 'Georgia', 'serif'],
+        heading: ['var(--font-frank-ruhl)', 'Georgia', 'serif'],
+        body: ['var(--font-montserrat)', 'var(--font-inter)', ...fontFamily.sans],
       },
       colors: {
-        // Primary: Dark Blue from logo (main brand color)
+        // Primary: Deep Navy (Jurri template)
         primary: {
-          50: '#E8EEF4',
-          100: '#C5D5E4',
-          200: '#9FBBD3',
-          300: '#79A1C2',
-          400: '#5387B1',
-          500: customColors.primary.main, // #0C3B6A
+          50: '#e8eef4',
+          100: '#c5d5e4',
+          200: '#1b273a',
+          300: '#162233',
+          400: customColors.primary.lighter, // #1b273a
+          500: customColors.primary.main, // #0d1c29
           600: customColors.primary.dark,
           700: customColors.primary.darker,
-          800: '#041424',
-          900: '#020A12',
+          800: '#050a0d',
+          900: '#020507',
           DEFAULT: customColors.primary.main,
         },
-        // Accent: Cyan from logo (CTAs, links, highlights)
+        // Accent: Warm Gold (Jurri template - CTAs, links, highlights)
         accent: {
-          50: '#E6F6FC',
-          100: '#B3E4F7',
-          200: '#80D2F2',
-          300: '#4DC0ED',
-          400: '#1AAEE8',
-          500: customColors.accent.main, // #0099DB
+          50: '#faf6f1',
+          100: '#f2ebe1',
+          200: '#e8d9c6',
+          300: customColors.accent.light, // #d4c0a5
+          400: customColors.accent.main, // #c5a788
+          500: customColors.accent.main,
           600: customColors.accent.dark,
           700: customColors.accent.darker,
-          800: '#003D57',
-          900: '#001E2B',
+          800: '#5c4d3a',
+          900: '#3d3327',
           DEFAULT: customColors.accent.main,
         },
-        // Success: Green from logo (sparingly)
+        // Gold alias for semantic naming
+        gold: {
+          50: '#faf6f1',
+          100: '#f2ebe1',
+          200: '#e8d9c6',
+          300: '#d4c0a5',
+          400: '#c5a788',
+          500: '#c5a788',
+          600: '#a68a6a',
+          700: '#87704f',
+          DEFAULT: '#c5a788',
+        },
+        // Success: Green for success states
         success: {
-          50: '#EEF7EE',
-          100: '#D4EBD3',
-          200: '#BADEB8',
-          300: '#9FD19D',
-          400: '#85C582',
-          500: customColors.success.main, // #5AAD55
+          50: '#ecfdf5',
+          100: '#d1fae5',
+          200: '#a7f3d0',
+          300: '#6ee7b7',
+          400: '#34d399',
+          500: customColors.success.main,
           600: customColors.success.dark,
           700: customColors.success.darker,
-          800: '#234422',
-          900: '#112211',
+          800: '#065f46',
+          900: '#064e3b',
           DEFAULT: customColors.success.main,
         },
-        // Neutral: Charcoal from logo text
-        charcoal: {
-          50: '#F3F4F4',
-          100: '#E1E3E4',
-          200: '#C3C7C9',
-          300: '#A5ABAE',
-          400: '#878F93',
-          500: customColors.neutral.main, // #42494D
+        // Neutral: Slate tones
+        slate: {
+          50: '#f8fafc',
+          100: '#f1f5f9',
+          200: '#e2e8f0',
+          300: '#cbd5e1',
+          400: '#94a3b8',
+          500: customColors.neutral.main,
           600: customColors.neutral.dark,
           700: customColors.neutral.darker,
+          800: '#1e293b',
+          900: '#0f172a',
           DEFAULT: customColors.neutral.main,
         },
         secondary: {
@@ -130,8 +146,9 @@ module.exports = {
           DEFAULT: customColors.secondary.main,
         },
         // Background colors
-        cream: '#fffffb',
-        'cream-dark': '#f7f7f7',
+        cream: '#f9f9f9',
+        'cream-dark': '#e8eded',
+        'cream-warm': '#ead3bc',
         // Shadcn UI tokens
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',

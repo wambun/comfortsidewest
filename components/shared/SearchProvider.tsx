@@ -2,21 +2,23 @@
 
 import { SearchProvider as PlinySearchProvider } from '@shipixen/pliny/search';
 import { siteConfig } from '@/data/config/site.settings';
-import { useRouter } from 'next/navigation';
 
 export const SearchProvider = ({ children }: { children: React.ReactNode }) => {
-    const router = useRouter();
-    const searchConfig = siteConfig.search;
+  const searchConfig = siteConfig.search;
 
-    if (!searchConfig) {
-        return <>{children}</>;
-    }
+  // If search is disabled or not configured, just render children
+  if (!searchConfig) {
+    return <>{children}</>;
+  }
 
+  // Type guard: only pass to PlinySearchProvider if it's a valid config object
+  if (typeof searchConfig === 'object') {
     return (
-        <PlinySearchProvider
-            searchConfig={searchConfig}
-        >
-            {children}
-        </PlinySearchProvider>
+      <PlinySearchProvider searchConfig={searchConfig}>
+        {children}
+      </PlinySearchProvider>
     );
+  }
+
+  return <>{children}</>;
 };

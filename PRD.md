@@ -1,271 +1,156 @@
-# Congruity HR Website Redesign - Product Requirements Document (PRD)
+# Comfortside West Website Redesign - Product Requirements Document (PRD)
 
 ## Executive Summary
 
-This document outlines the complete redesign of the CongruityHR.com website, transforming it from a WordPress-based site to a modern Next.js 15 application. The redesign will adopt the premium visual design language from the HR-Pro Framer template while preserving all existing content and business functionality.
+This document outlines the complete redesign of the Comfortside West website, transforming it from a WordPress/Elementor-based site to a modern Next.js 15 application. The redesign will adopt the premium visual design language from the Jurri Framer template while preserving all existing content and business functionality.
+
+**Client:** Comfortside West LLC
+**Business:** Wholesale distributor of ductless mini-split HVAC systems
+**Target Audience:** HVAC contractors, dealers, and homeowners
 
 ---
 
-## 1. Sitemap Analysis (Current State)
+## 1. Current Site Analysis
 
-### 1.1 Primary Navigation Structure
-
-Based on the crawled data from congruityhr.com (85 pages):
+### 1.1 Site Structure
 
 ```
-/                           # Home
-/about-us/                  # About Us (Coming Soon placeholder)
-  /mission-vision-values/   # Mission, Vision & Values
-/services/                  # Services Hub (Coming Soon placeholder)
-  /peo-services/            # PEO Services
-  /aso-services/            # ASO Services
-  /hr-solutions/            # HR Solutions
-  /employee-benefits/       # Employee Benefits
-  /compliance-risk/         # Compliance & Risk Management
-/industries/                # Industries Hub (Coming Soon placeholder)
-  /professional-services/   # Professional Services
-  /hospitality/             # Hospitality & Resorts
-  /healthcare/              # Healthcare & Biotech
-  /financial-services/      # Financial Services & Technology
-  /manufacturing/           # Manufacturing
-  /retail/                  # Retail
-  /education/               # Education
-  /non-profits/             # Non-Profits
-  /startups/                # Startups
-  /senior-living/           # Senior Living
-  /real-estate/             # Real Estate
-/resources/                 # Resources Hub (Coming Soon placeholder)
-  /blog/                    # Blog Archive (30+ articles)
-  /press-releases/          # Press Releases
-  /learning/                # Learning Resources
-/partners/                  # Partners
-  /brokers/                 # Brokers
-  /referrals/               # Referrals
-  /strategic-alliances/     # Strategic Alliances
-/contact-us/                # Contact Us
-/book-a-demo/               # Book a Demo
-/login/                     # User Login (iSolved platform)
+/                              # Home
+/brands/                       # Brands showcase (Cooper&Hunter, Olmo, Bravo)
+/products/                     # Products hub
+  /residential/                # Residential mini-split systems
+  /commercial-vrf/             # Commercial/VRF systems
+  /all-in-one/                 # All-in-one units
+/cooperhunter-dealer-program/  # Pro-Tech Dealer Program
+/contact-us/                   # Contact page with form
+/about-us/                     # About page
+/news/                         # News/updates
+/privacy-policy/               # Legal
+/refund_returns/               # Returns policy
 ```
 
-### 1.2 Blog Content Inventory
+### 1.2 Key Content
 
-Current blog articles (from crawled data):
-- 9 Essential Benefits Planning Steps for HR Teams
-- ASO Services for Construction Companies
-- Best HR Payroll Services for Small Businesses
-- Boost Engagement and Productivity: Retention Strategies
-- Compliance Challenges Explained
-- Data-Driven Workforce Planning: A Roadmap for 2026
-- Effective Ways to Manage Labor Costs During Inflation
-- Expert HR Solutions for Startups
-- How Payroll Fraud Happens and How to Prevent It
-- How PEOs Help Nonprofits Reduce Admin Burden
-- HR and Workplace Safety: A Winning Combination
-- HR Outsourcing: The Ultimate Guide for Businesses
-- HR Solutions for Closing Skill Gaps
-- HR Technology Trends That Boost Employee Experience
-- Key Benefits of PEOs for Operational Efficiency
-- Outsource Payroll Processing Benefits
-- Partnering with a PEO: Reduce Labor Costs Effectively
-- Payroll Challenges and Solutions
-- Payroll Compliance Checklist
-- Payroll Tax Compliance: How to Stay Updated
-- PEO Benefits for Business Owners
-- PEO Hospital Solutions
-- PEO Services for Healthcare
-- PEO Services for HR Management in Finance
-- PEO Services for Small Businesses
-- PEOs Modern Workforce Strategies
-- PEOs Supercharge Business Growth
-- Remote Work Policies Best Practices
-- Strategic HR Outsourcing
-- The ROI of HR Outsourcing
-- Top 10 Payroll Mistakes and How to Avoid Them
-- Top HR Challenges in Retail
-- Wage and Hour Laws Compliance Guide
-- Worker Classification Guide
-- Workplace Harmony During Elections
-- Year-End HR Best Practices
+**Company Info:**
+- Name: Comfortside West LLC
+- Tagline: "Your Trusted Source for Wholesale Ductless Air Conditioning Systems"
+- Phone: 800-910-7349
+- Email: West@comfortside.com
+- Address: 3900 N Dallas Ave Ste 300, Lancaster, TX 75134
+- Hours: Monday-Friday, 8am-5pm
+
+**Value Propositions:**
+1. High Quality - Top-tier mini split systems from leading brands
+2. Cost-Effective - Wholesale prices without compromising quality
+3. New Technologies - Advanced technology and customizable settings
+
+**Brands (3):**
+1. **Cooper&Hunter** - Premium brand, 20+ years experience, innovative
+2. **Olmo** - Balanced technology + affordability, energy efficient
+3. **Bravo** - Budget-friendly, reliable performance
+
+**Product Categories (3):**
+1. Residential
+2. Commercial/VRF
+3. All-in-One
 
 ---
 
-## 2. Visual Analysis (New Design Target)
+## 2. Design Reference Analysis (Jurri Template)
 
 ### 2.1 Color System
 
-Based on HR-Pro Framer template analysis:
-
 ```css
 /* Primary Palette */
---color-primary-dark: #1f514c;     /* Deep teal - headers, accents */
---color-primary-medium: #35625d;   /* Medium teal - secondary elements */
---color-background-cream: #fffffb; /* Light cream - main backgrounds */
---color-background-gray: #f7f7f7;  /* Light gray - section alternates */
---color-border-light: #e9eaeb;     /* Light gray - dividers, borders */
---color-text-secondary: #777272;   /* Medium gray - body text */
---color-accent-green: rgba(174, 218, 148, 0.2); /* Soft green overlay */
+--color-primary-dark: #0d1c29;     /* Deep navy - main backgrounds */
+--color-accent-gold: #c5a788;       /* Warm gold - CTAs, highlights */
+--color-bg-secondary: #132030;      /* Card backgrounds */
+--color-bg-tertiary: #1b273a;       /* Alternate sections */
+--color-bg-light: #f9f9f9;          /* Light sections */
+--color-cream: #ead3bc;             /* Accent backgrounds */
+--color-text-primary: #ffffff;      /* Text on dark */
+--color-text-muted: rgba(255,255,255,0.7); /* Secondary text */
+--color-neutral: #e8eded;           /* Borders, dividers */
 ```
 
 ### 2.2 Typography System
 
 ```css
-/* Headlines - Parkinsans (closest: Inter or custom) */
---font-headline: 'Inter', sans-serif;
---font-headline-weight-light: 300;
---font-headline-weight-medium: 500;
---font-headline-weight-bold: 700;
---font-headline-letter-spacing: -2px;
---font-headline-line-height: 1.1em;
+/* Font Families */
+--font-heading: 'Frank Ruhl Libre', serif;  /* Elegant headings */
+--font-body: 'Montserrat', sans-serif;       /* Body text */
+--font-secondary: 'Inter', sans-serif;       /* UI elements */
 
-/* Size Scale */
---text-h1-desktop: 54px;
---text-h1-tablet: 50px;
---text-h1-mobile: 40px;
---text-h2-desktop: 40px;
---text-h3-desktop: 32px;
---text-body: 16px;
---text-body-line-height: 1.5em;
+/* Font Scale */
+--text-h1: clamp(2.5rem, 5vw, 4rem);    /* 40-64px */
+--text-h2: clamp(2rem, 4vw, 3rem);       /* 32-48px */
+--text-h3: clamp(1.5rem, 3vw, 2rem);     /* 24-32px */
+--text-body: 1rem;                        /* 16px */
 ```
 
-### 2.3 Spacing System
-
-```css
-/* Section Spacing */
---section-padding-vertical: 100px;
---section-gap-major: 160px;
---section-gap-standard: 100px;
-
-/* Container Widths */
---container-max: 1290px;
---container-content: 1280px;
---container-padding: 15px; /* 20px on mobile */
-
-/* Component Spacing */
---gap-tight: 6px;
---gap-minimal: 10px;
---gap-content: 24px;
---gap-section: 40px;
---gap-grid: 20px;
---gap-cards: 30px;
-```
-
-### 2.4 Component Patterns
-
-**Cards:**
-- Border radius: 16px (standard), 18px (content blocks)
-- Shadow hierarchy (3-layer system):
-  - Primary: `0 12px 16px 0 rgba(10,13,18,.08)`
-  - Secondary: `0 4px 5px -2px rgba(10,13,18,.03)`
-- Min-height: 430px for feature cards
-- Padding: 50px internal
-
-**Buttons:**
-- Pill style: `border-radius: 60px`
-- Padding: `2px 12px` (badge), `12px 24px` (standard)
-- Primary: Light cream background, dark teal text
-- Secondary: Outlined with dark teal border
+### 2.3 Key Design Patterns
 
 **Navigation:**
-- Fixed positioning at top
-- Light gray background (#f7f7f7)
-- 200px top padding on page content
-- Logo left, links center/right
+- Fixed header with dark background
+- Logo left, nav center, CTA right
+- Contact info in top bar (phone, email)
+- Mobile hamburger menu
+
+**Hero Section:**
+- Full-width with dark overlay
+- Serif headline, sans-serif body
+- Client logo strip below hero
+- Primary CTA button
+
+**Cards:**
+- Dark backgrounds (#132030)
+- 16px border radius
+- Hover lift effect
+- Gold accent links
 
 **Footer:**
-- Dark teal background (#1f514c)
-- 100px vertical padding
-- Multi-column layout with 40px gap
-- Client logo grid with 30px gaps
-
-### 2.5 Animation & Micro-interactions
-
-- Transform-based positioning for layered effects
-- Opacity variations (0.2, 0.3, 1.0) for depth stacking
-- `will-change: transform` for performance optimization
-- Gradient overlays: `linear-gradient(0deg, rgba(0,0,0,.7))`
-- Smooth scroll behavior
-- Framer Motion for page transitions and component reveals
+- Dark background matching header
+- Multi-column layout
+- Social icons
+- Copyright and legal links
 
 ---
 
-## 3. Content Mapping Strategy
+## 3. New Site Architecture
 
-### 3.1 Page-by-Page Mapping
+### 3.1 Proposed Sitemap
 
-| Old Site Page | New Design Component | Data Source |
-|---------------|---------------------|-------------|
-| Home | Hero + Services Grid + Industries Carousel + Testimonials + CTA | `client/old/ea_home_2*` |
-| About Us | Hero + Mission/Values Cards + Team Grid + Awards | `client/old/about_us*`, `what_makes_congruity*` |
-| Services Hub | Services Grid + Feature Cards | `client/old/services*` |
-| PEO Services | Service Detail with Features List | `client/old/leading_hr_services*` |
-| ASO Services | Service Detail with Features List | `client/old/top_administrative*` |
-| HR Solutions | Service Detail with Features List | `client/old/leading_hr_services*` |
-| Employee Benefits | Service Detail with Benefits List | `client/old/comprehensive_employee*` |
-| Industries Hub | Industries Grid with Cards | Industry-specific pages |
-| Blog Archive | Blog Grid with Categories | All blog markdown files |
-| Blog Post | Article Layout with Sidebar | Individual blog files |
-| Contact Us | Contact Form + Map + Info Cards | `client/old/reach_out*` |
-| Book a Demo | Demo Request Form | `client/old/book_a_demo*` |
-
-### 3.2 Content Data Structure
-
-```typescript
-// services/types.ts
-interface Service {
-  id: string;
-  title: string;
-  slug: string;
-  shortDescription: string;
-  longDescription: string;
-  features: ServiceFeature[];
-  benefits: string[];
-  ctaText: string;
-  ctaLink: string;
-  heroImage: string;
-  icon: string;
-}
-
-// industries/types.ts
-interface Industry {
-  id: string;
-  title: string;
-  slug: string;
-  description: string;
-  challenges: string[];
-  solutions: string[];
-  heroImage: string;
-  icon: string;
-}
-
-// blog/types.ts
-interface BlogPost {
-  id: string;
-  title: string;
-  slug: string;
-  excerpt: string;
-  content: string; // MDX
-  publishedAt: Date;
-  author: Author;
-  category: string;
-  tags: string[];
-  featuredImage: string;
-  readingTime: number;
-}
-
-// testimonials/types.ts
-interface Testimonial {
-  id: string;
-  name: string;
-  role?: string;
-  company?: string;
-  quote: string;
-  avatar?: string;
-}
+```
+/                           # Home
+/about                      # About Us
+/brands                     # Brands Hub
+  /cooper-hunter            # Cooper&Hunter detail
+  /olmo                     # Olmo detail
+  /bravo                    # Bravo detail
+/products                   # Products Hub
+  /residential              # Residential systems
+  /commercial               # Commercial/VRF systems
+  /all-in-one               # All-in-one units
+/dealer-program             # Cooper&Hunter Pro-Tech Program
+/contact                    # Contact page
+/privacy-policy             # Privacy Policy
+/terms                      # Terms & Conditions
 ```
 
+### 3.2 Page-by-Page Mapping
+
+| Old Page | New Page | Key Sections |
+|----------|----------|--------------|
+| / | / | Hero, Value Props, About, Brands Grid, Why Choose Us, Categories, CTA |
+| /brands | /brands | Hero, Brands Grid with cards |
+| /products | /products | Hero, Category Grid, Product listings |
+| /cooperhunter-dealer-program | /dealer-program | Program overview, Tiers, Benefits, Signup form |
+| /contact-us | /contact | Contact form, Map, Contact info cards |
+| /about-us | /about | Company story, Mission, Team (if applicable) |
+
 ---
 
-## 4. Technical Implementation Plan
+## 4. Technical Implementation
 
 ### 4.1 Project Structure
 
@@ -273,209 +158,192 @@ interface Testimonial {
 /app
   /layout.tsx              # Root layout with Header/Footer
   /page.tsx                # Home page
-  /(marketing)             # Marketing pages group
-    /about/page.tsx        # About Us
-    /contact/page.tsx      # Contact Us
-    /book-demo/page.tsx    # Book a Demo
-  /services
-    /page.tsx              # Services hub
-    /[slug]/page.tsx       # Individual service pages
-  /industries
-    /page.tsx              # Industries hub
-    /[slug]/page.tsx       # Individual industry pages
-  /resources
-    /page.tsx              # Resources hub
-    /blog
-      /page.tsx            # Blog archive
-      /[slug]/page.tsx     # Individual blog posts
-  /partners
-    /page.tsx              # Partners hub
-    /brokers/page.tsx      # Brokers
-    /referrals/page.tsx    # Referrals
-  /login/page.tsx          # Login redirect
+  /about/page.tsx          # About page
+  /brands
+    /page.tsx              # Brands hub
+    /[slug]/page.tsx       # Individual brand pages
+  /products
+    /page.tsx              # Products hub
+    /[category]/page.tsx   # Category pages
+  /dealer-program/page.tsx # Dealer program
+  /contact/page.tsx        # Contact page
+  /(legal)
+    /privacy-policy/page.tsx
+    /terms/page.tsx
 
 /components
-  /landing                 # Landing page components
-    /hero                  # Hero sections
+  /landing                 # Page sections
+    /hero
       /HeroHome.tsx
       /HeroPage.tsx
-    /sections              # Page sections
-      /ServicesGrid.tsx
-      /IndustriesCarousel.tsx
-      /TestimonialsSlider.tsx
+    /sections
+      /AboutSection.tsx
+      /BrandsGrid.tsx
+      /CategoriesGrid.tsx
+      /WhyChooseUs.tsx
       /CTASection.tsx
-      /FAQAccordion.tsx
-      /StatsSection.tsx
-    /cards                 # Card components
-      /ServiceCard.tsx
-      /IndustryCard.tsx
-      /BlogCard.tsx
-      /TeamCard.tsx
-      /TestimonialCard.tsx
-    /forms                 # Form components
+      /DealerTiers.tsx
+      /BenefitsGrid.tsx
+    /cards
+      /BrandCard.tsx
+      /CategoryCard.tsx
+      /ValuePropCard.tsx
+      /BenefitCard.tsx
+    /forms
       /ContactForm.tsx
-      /DemoForm.tsx
-      /NewsletterForm.tsx
-  /shared                  # Shared/global components
-    /Header.tsx            # Site header/navigation
-    /Footer.tsx            # Site footer
-    /Logo.tsx              # Logo component
-    /Button.tsx            # Button variants
-    /Badge.tsx             # Badge/pill component
-    /Container.tsx         # Layout container
-    /SectionHeading.tsx    # Section heading
-    /Link.tsx              # Custom link component
-  /ui                      # Shadcn UI components
-    /accordion.tsx
-    /button.tsx
-    /card.tsx
-    /form.tsx
-    /input.tsx
-    /sheet.tsx
-    /etc...
+      /DealerSignupForm.tsx
+  /shared
+    /Header.tsx
+    /Footer.tsx
+    /Logo.tsx
+    /Container.tsx
+    /SectionHeading.tsx
+  /ui                      # Shadcn components
 
 /data
   /config
-    /colors.js             # Color theme (update for teal)
     /site.settings.js      # Site metadata
     /headerNavLinks.ts     # Navigation links
     /footerLinks.ts        # Footer links
   /content
-    /services.json         # Services data
-    /industries.json       # Industries data
-    /testimonials.json     # Testimonials data
-    /team.json             # Team members
-  /blog                    # Blog MDX files
-    /[slug].mdx
+    /brands.json           # Brands data
+    /products.json         # Products/categories
+    /testimonials.json     # Testimonials (if any)
 
 /lib
-  /utils.ts                # Utility functions
+  /utils.ts
   /animations.ts           # Framer Motion variants
 
 /public
-  /static
-    /images
-      /logo/               # Logo files
-      /services/           # Service images
-      /industries/         # Industry images
-      /team/               # Team photos
-      /blog/               # Blog images
-    /favicons/             # Favicon files
+  /images
+    /logo/
+    /brands/
+    /products/
+    /hero/
 ```
 
 ### 4.2 Implementation Phases
 
-**Phase 2.1: Foundation Setup**
-1. Update color system in `colors.js` for teal palette
-2. Update typography in `globals.css` and Tailwind config
-3. Configure Tailwind for new spacing system
-4. Update site metadata in `metadata.js`
-5. Set up headerNavLinks and footerLinks
+**Phase 1: Foundation (Current)**
+- [x] Project initialization
+- [x] Content extraction from old site
+- [x] Design token documentation
+- [x] PRD generation
 
-**Phase 2.2: Core Components**
-1. Build Header component with navigation
-2. Build Footer component with columns
-3. Build Container component for layouts
-4. Build Button variants (primary, secondary, outline)
-5. Build Card base component
+**Phase 2: Design System Setup**
+- [ ] Update Tailwind config with colors
+- [ ] Configure typography (fonts, scales)
+- [ ] Set up CSS variables in globals.css
+- [ ] Create animation variants
 
-**Phase 2.3: Landing Components**
-1. HeroHome - main hero with slider/carousel
-2. ServicesGrid - 3-column service cards
-3. IndustriesCarousel - horizontal scrolling industry cards
-4. TestimonialsSlider - testimonial carousel
-5. CTASection - call-to-action sections
-6. FAQAccordion - expandable FAQ
+**Phase 3: Core Components**
+- [ ] Header component with navigation
+- [ ] Footer component with links
+- [ ] Container and layout components
+- [ ] Button variants (primary, secondary, ghost)
+- [ ] Card base components
 
-**Phase 2.4: Page Implementation**
-1. Home page - assemble all landing components
-2. About Us page
-3. Services hub + individual service pages
-4. Industries hub + individual industry pages
-5. Resources hub + blog archive
-6. Contact page with form
-7. Book a Demo page with form
+**Phase 4: Landing Sections**
+- [ ] Hero sections (home, page)
+- [ ] About section
+- [ ] Brands grid
+- [ ] Categories grid
+- [ ] Why Choose Us section
+- [ ] CTA section
 
-**Phase 2.5: Content Migration**
-1. Extract content from crawled markdown files
-2. Create JSON data files for services, industries, testimonials
-3. Create MDX files for blog posts
-4. Import and optimize images
+**Phase 5: Page Implementation**
+- [ ] Home page
+- [ ] About page
+- [ ] Brands hub + detail pages
+- [ ] Products hub + category pages
+- [ ] Dealer Program page
+- [ ] Contact page
 
-**Phase 2.6: Polish & Animations**
-1. Add Framer Motion page transitions
-2. Add scroll-triggered animations
-3. Add hover states and micro-interactions
-4. Mobile responsiveness testing
-5. Performance optimization
+**Phase 6: Forms & Functionality**
+- [ ] Contact form with validation
+- [ ] Dealer signup form
+- [ ] Form submission handling
 
-### 4.3 Key Technical Decisions
-
-**Routing:**
-- App Router with route groups for clean organization
-- Dynamic routes for services, industries, blog
-- Static generation for content pages
-
-**Data Fetching:**
-- Static JSON files for services/industries
-- MDX for blog content (with Contentlayer)
-- Server components by default
-
-**Animations:**
-- Framer Motion for page transitions
-- CSS transitions for hover states
-- Intersection Observer for scroll triggers
-
-**Forms:**
-- React Hook Form for validation
-- Zod for schema validation
-- Server Actions for form submission
-
-**Styling:**
-- Tailwind CSS for utility classes
-- CSS custom properties for theming
-- Shadcn UI as component base
+**Phase 7: Polish & Testing**
+- [ ] Responsive testing (mobile, tablet, desktop)
+- [ ] Accessibility audit (WCAG AA)
+- [ ] Performance optimization
+- [ ] Lighthouse audit (target: 90+ all categories)
+- [ ] Cross-browser testing
 
 ---
 
-## 5. Contact Information & External Links
+## 5. Content Data Structures
 
-### 5.1 Business Contact
-- **Location:** HQ in North Carolina, serving clients Nationwide
-- **Phone:** 844-247-4100
-- **Email:** info@congruityhr.com
+### 5.1 Brand Type
 
-### 5.2 External Integrations
-- **iSolved Platform:** Login portal for clients (external link)
-- **Google Analytics:** G-7PWB52X4ZQ
-- **reCAPTCHA:** Required for contact forms
+```typescript
+interface Brand {
+  id: string;
+  name: string;
+  slug: string;
+  description: string;
+  features: string[];
+  website: string;
+  logo: string;
+  dealerProgramEmail?: string;
+}
+```
 
-### 5.3 Social Media (to be configured)
-- LinkedIn
-- Facebook
-- Twitter/X
-- YouTube
+### 5.2 Product Category Type
+
+```typescript
+interface ProductCategory {
+  id: string;
+  name: string;
+  slug: string;
+  description: string;
+  image: string;
+  products?: Product[];
+}
+```
+
+### 5.3 Dealer Program Type
+
+```typescript
+interface DealerTier {
+  name: string;
+  icon: string;
+  requirement: string;
+  benefits: string[];
+}
+
+interface DealerProgram {
+  name: string;
+  description: string;
+  tiers: DealerTier[];
+  financialBenefits: string[];
+  supportBenefits: string[];
+}
+```
 
 ---
 
-## 6. Logo & Branding
+## 6. External Links & Integrations
 
-### 6.1 Assets Required
-- Primary logo (from congruityhr.com)
-- Logo variations (light/dark backgrounds)
-- Favicon set (16x16, 32x32, apple-touch-icon)
+### 6.1 Brand Websites
+- Cooper&Hunter: https://cooperandhunter.us/
+- Olmo: https://olmo-comfort.com/
+- Bravo: https://acbravo.com/
 
-### 6.2 Logo Placement
-- Header: Left-aligned, ~180px width
-- Footer: Centered or left-aligned
-- Social cards: Centered
+### 6.2 Social Media
+- Facebook: https://www.facebook.com/people/Comfortside-West-LLC/61556712921612/
+- LinkedIn: https://www.linkedin.com/company/comfortside-west-llc/
+
+### 6.3 Third-Party
+- BBB Profile: https://www.bbb.org/us/tx/lancaster/profile/ductless-ac/comfortside-west-llc-0875-91342427
 
 ---
 
 ## 7. Success Criteria
 
 ### 7.1 Design Fidelity
-- [ ] Color system matches HR-Pro template
+- [ ] Color system matches Jurri template
 - [ ] Typography hierarchy matches template
 - [ ] Card designs match template patterns
 - [ ] Section spacing matches template
@@ -483,52 +351,91 @@ interface Testimonial {
 
 ### 7.2 Content Completeness
 - [ ] All existing pages have new equivalents
-- [ ] All blog posts are migrated
-- [ ] All services/industries documented
+- [ ] All brand information preserved
+- [ ] All product categories represented
+- [ ] Dealer program fully documented
 - [ ] Contact information accurate
 
 ### 7.3 Technical Quality
-- [ ] Lighthouse score > 90 all categories
+- [ ] Lighthouse Performance ≥ 90
+- [ ] Lighthouse Accessibility ≥ 90
+- [ ] Lighthouse Best Practices ≥ 90
+- [ ] Lighthouse SEO ≥ 90
 - [ ] Mobile responsive on all breakpoints
-- [ ] Accessibility WCAG AA compliant
 - [ ] Zero console errors
 - [ ] Build completes without errors
 
 ### 7.4 Business Requirements
-- [ ] Contact forms functional
-- [ ] Demo booking functional
-- [ ] Analytics tracking active
+- [ ] Contact form functional
+- [ ] Dealer signup form functional
+- [ ] All external links working
+- [ ] Phone/email links clickable
 - [ ] SEO metadata complete
 
 ---
 
-## Appendix A: Crawled Content Summary
+## 8. Reference Files
 
-### Old Site (congruityhr.com)
-- Total pages crawled: 85
-- Blog articles: ~35
-- Service pages: 5
-- Industry pages: 12
-- Resource pages: 4
-- Contact/Demo pages: 2
+### Memory Files
+- `Memory/.state.json` - Project state tracking
+- `Memory/project-state.md` - Human-readable progress
+- `Memory/content-inventory.json` - Extracted content
+- `Memory/design-tokens.md` - Design system specs
+- `Memory/decisions.md` - Key decisions log
 
-### New Design Reference (hr-pro-template.framer.website)
-- Pages analyzed: 39
-- Layout patterns: Home, Services, About, Blog, Team, Contact
-- Component patterns: Cards, Grids, Carousels, Forms, FAQ
+### Screenshots
+- `.playwright-mcp/Memory/design-reference-homepage.png` - Design template
+- `.playwright-mcp/Memory/old-site-reference.png` - Current site
 
 ---
 
-## Appendix B: File References
+## Appendix A: Navigation Structure
 
-### Content Source Files
-- `client/old/*.md` - Crawled content from current site
-- `client/old/*.json` - Metadata for crawled pages
-- `client/new/*.md` - Design reference content
-- `client/new/*.json` - Design reference metadata
+### Header Navigation
+| Label | Path |
+|-------|------|
+| Home | / |
+| Brands | /brands |
+| Products | /products |
+| Cooper&Hunter Dealer Program | /dealer-program |
+| **Contact Us** (CTA) | /contact |
 
-### Configuration Files
-- `data/config/colors.js` - Color theme (needs update)
-- `data/config/metadata.js` - Site metadata (needs update)
-- `data/config/headerNavLinks.ts` - Navigation (needs update)
-- `data/config/footerLinks.ts` - Footer links (needs update)
+### Footer Navigation
+**Company**
+- Home
+- About Us
+- Brands
+- Products
+- News
+
+**Get In Touch**
+- Phone: 800-910-7349
+- Address: 3900 N Dallas Ave Ste 300, Lancaster, TX 75134
+- Hours: Monday-Friday, 8am-5pm
+
+**Social**
+- Facebook
+- LinkedIn
+- BBB
+
+---
+
+## Appendix B: Form Fields
+
+### Contact Form
+- First Name (required)
+- Last Name (required)
+- Email (required)
+- Phone (required)
+- Message (textarea)
+
+### Dealer Signup Form
+- Business Name (required)
+- Contact Name (required)
+- Email (required)
+- Phone (required)
+- Number of Technicians
+- Current Wholesale Distributor
+- Brands Currently Sold
+- Service Location/Territory
+- Message/Notes

@@ -2,68 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Google Fonts Import - Jurri Template Typography */
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700&family=Inter:wght@400;500;600;700&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,500;1,700&display=swap');
+
 @layer base {
   :root {
-    /* Logo-matched color tokens */
-    --color-primary: #0C3B6A;        /* Dark Blue from logo */
-    --color-primary-light: #1A5A9E;
-    --color-primary-dark: #082B4E;
-    --color-accent: #0099DB;         /* Cyan from logo */
-    --color-accent-light: #33ADEE;
-    --color-success: #5AAD55;        /* Green from logo (sparingly) */
-    --color-charcoal: #42494D;       /* Text color from logo */
-    --color-cream: #fffffb;
-    --color-cream-dark: #f7f7f7;
-    --color-border: #e9eaeb;
-    --color-text-muted: #6B7280;
+    /* Jurri Template Color Tokens */
+    --color-primary: #0d1c29;           /* Deep Navy */
+    --color-primary-light: #132030;
+    --color-primary-dark: #091318;
+    --color-accent: #c5a788;            /* Warm Gold */
+    --color-accent-light: #d4c0a5;
+    --color-accent-dark: #a68a6a;
+    --color-secondary: #1b273a;         /* Card backgrounds */
+    --color-tertiary: #132030;          /* Alternate sections */
+    --color-cream: #f9f9f9;             /* Light background */
+    --color-cream-warm: #ead3bc;        /* Warm accent */
+    --color-border: #e8eded;
+    --color-text-muted: rgba(255, 255, 255, 0.7);
 
     /* Shadows */
-    --shadow-card: 0 12px 16px 0 rgba(10,13,18,.08), 0 4px 5px -2px rgba(10,13,18,.03);
-    --shadow-card-hover: 0 20px 25px -5px rgba(10,13,18,.1), 0 8px 10px -6px rgba(10,13,18,.1);
+    --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    --shadow-card-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
 
-    /* Shadcn UI tokens - Blue primary theme */
-    --background: 60 33% 99%;
-    --foreground: 210 11% 15%;
-    --card: 60 33% 99%;
-    --card-foreground: 210 11% 15%;
-    --popover: 60 33% 99%;
-    --popover-foreground: 210 11% 15%;
-    --primary: 209 80% 23%;          /* Dark Blue */
-    --primary-foreground: 60 33% 99%;
-    --secondary: 0 0% 97%;
-    --secondary-foreground: 210 11% 15%;
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
-    --accent: 199 100% 43%;          /* Cyan */
-    --accent-foreground: 60 33% 99%;
+    /* Shadcn UI tokens - Dark Navy Theme */
+    --background: 0 0% 98%;
+    --foreground: 210 24% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 210 24% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 24% 10%;
+    --primary: 210 50% 11%;             /* Deep Navy */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 210 24% 10%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 210 10% 45%;
+    --accent: 32 35% 65%;               /* Warm Gold */
+    --accent-foreground: 210 24% 10%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 199 100% 43%;            /* Cyan for focus rings */
-    --radius: 0.5rem;
+    --border: 210 15% 90%;
+    --input: 210 15% 90%;
+    --ring: 32 35% 65%;                 /* Gold for focus rings */
+    --radius: 0.75rem;
   }
 
   .dark {
-    --background: 210 15% 8%;
-    --foreground: 60 9% 98%;
-    --card: 210 15% 10%;
-    --card-foreground: 60 9% 98%;
-    --popover: 210 15% 10%;
-    --popover-foreground: 60 9% 98%;
-    --primary: 199 100% 50%;
-    --primary-foreground: 210 15% 8%;
-    --secondary: 210 10% 15%;
-    --secondary-foreground: 60 9% 98%;
-    --muted: 210 10% 15%;
-    --muted-foreground: 0 0% 64%;
-    --accent: 209 80% 35%;
-    --accent-foreground: 60 9% 98%;
+    --background: 210 50% 8%;
+    --foreground: 0 0% 98%;
+    --card: 210 40% 12%;
+    --card-foreground: 0 0% 98%;
+    --popover: 210 40% 12%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 32 35% 65%;              /* Gold becomes primary in dark */
+    --primary-foreground: 210 50% 8%;
+    --secondary: 210 30% 18%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 210 30% 18%;
+    --muted-foreground: 210 10% 60%;
+    --accent: 32 35% 65%;
+    --accent-foreground: 210 50% 8%;
     --destructive: 0 62% 30%;
     --destructive-foreground: 0 86% 97%;
-    --border: 210 10% 20%;
-    --input: 210 10% 20%;
-    --ring: 199 100% 50%;
+    --border: 210 30% 20%;
+    --input: 210 30% 20%;
+    --ring: 32 35% 65%;
   }
 
   * {
@@ -76,78 +81,77 @@
 
   body {
     @apply bg-cream text-foreground antialiased;
+    font-family: var(--font-montserrat), var(--font-inter), system-ui, sans-serif;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
-  /* HR-Pro inspired typography */
+  /* Jurri-inspired Typography */
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display tracking-headline;
+    font-family: var(--font-frank-ruhl), Georgia, serif;
+    @apply tracking-tight;
   }
 
   h1 {
-    @apply text-h1 font-semibold;
+    @apply text-4xl md:text-5xl lg:text-6xl font-light leading-tight;
   }
 
   h2 {
-    @apply text-h2 font-semibold;
+    @apply text-3xl md:text-4xl lg:text-5xl font-normal leading-tight;
   }
 
   h3 {
-    @apply text-h3 font-semibold;
+    @apply text-2xl md:text-3xl font-medium leading-snug;
   }
 
   h4 {
-    @apply text-h4 font-semibold;
+    @apply text-xl md:text-2xl font-medium leading-snug;
   }
 
   p {
-    @apply text-body leading-relaxed;
+    @apply text-base leading-relaxed;
   }
 }
 
 @layer components {
-  /* HR-Pro Button Styles - Premium Enhanced */
+  /* Jurri Button Styles */
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-button px-6 py-3 text-sm font-medium;
-    @apply transition-all duration-300 ease-out;
-    @apply relative overflow-hidden;
-    @apply hover:scale-[1.02] active:scale-[0.98];
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-semibold;
+    @apply transition-all duration-200 ease-out;
+    @apply focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2;
   }
 
   .btn-primary {
-    @apply bg-primary text-white shadow-sm;
-    @apply hover:shadow-lg hover:shadow-primary/20;
-  }
-
-  /* Shimmer effect for primary buttons */
-  .btn-primary::before {
-    content: '';
-    @apply absolute inset-0 -translate-x-full;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-    transition: transform 0.6s ease;
-  }
-
-  .btn-primary:hover::before {
-    @apply translate-x-full;
+    @apply bg-accent text-primary;
+    @apply hover:bg-accent-300 hover:shadow-lg;
   }
 
   .btn-secondary {
-    @apply bg-cream text-primary border border-primary/20;
-    @apply hover:bg-primary/5 hover:border-primary/30;
+    @apply bg-transparent text-white border border-accent;
+    @apply hover:bg-accent hover:text-primary;
   }
 
   .btn-outline {
-    @apply bg-transparent text-primary border-2 border-primary;
-    @apply hover:bg-primary hover:text-white;
+    @apply bg-transparent text-accent border-2 border-accent;
+    @apply hover:bg-accent hover:text-primary;
   }
 
   .btn-ghost {
-    @apply bg-transparent text-primary hover:bg-primary/10;
+    @apply bg-transparent text-accent hover:bg-accent/10;
   }
 
-  /* HR-Pro Card Styles */
+  .btn-dark {
+    @apply bg-primary text-white;
+    @apply hover:bg-primary-400;
+  }
+
+  /* Jurri Card Styles - Dark theme cards */
   .card {
-    @apply bg-white rounded-card shadow-card transition-all duration-300;
+    @apply bg-white rounded-2xl shadow-card transition-all duration-300;
+  }
+
+  .card-dark {
+    @apply bg-primary-400 text-white rounded-2xl;
+    @apply transition-all duration-300;
   }
 
   .card-hover {
@@ -158,85 +162,95 @@
     @apply card card-hover cursor-pointer;
   }
 
-  /* Premium Card - with subtle gradient, border, and glow */
+  /* Premium Card - with subtle glow on hover */
   .card-premium {
-    @apply bg-white rounded-card shadow-card;
-    @apply border border-primary/5;
+    @apply bg-primary-400 text-white rounded-2xl;
+    @apply border border-white/5;
     @apply transition-all duration-300 ease-out;
-    background: linear-gradient(135deg, white 0%, rgba(255,255,255,0.97) 50%, rgba(12, 59, 106, 0.02) 100%);
   }
 
   .card-premium:hover {
     @apply -translate-y-1 border-accent/20;
     box-shadow:
-      0 20px 25px -5px rgba(10,13,18,.1),
-      0 8px 10px -6px rgba(10,13,18,.1),
-      0 0 40px rgba(0, 153, 219, 0.1);
+      0 20px 25px -5px rgba(0,0,0,.2),
+      0 0 40px rgba(197, 167, 136, 0.1);
   }
 
-  /* HR-Pro Badge/Pill Styles */
+  /* Badge/Pill Styles */
   .badge {
-    @apply inline-flex items-center rounded-badge px-3 py-1 text-xs font-medium;
+    @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-medium;
   }
 
-  .badge-primary {
-    @apply bg-primary/10 text-primary;
+  .badge-gold {
+    @apply bg-accent/20 text-accent;
   }
 
-  .badge-secondary {
-    @apply bg-cream-dark text-gray-700;
+  .badge-dark {
+    @apply bg-primary text-white;
   }
 
-  /* HR-Pro Section Styles */
+  /* Section Styles */
   .section {
-    @apply py-20 lg:py-26;
+    @apply py-20 lg:py-24;
   }
 
   .section-lg {
-    @apply py-26 lg:py-34;
+    @apply py-24 lg:py-32;
   }
 
   .section-dark {
     @apply bg-primary text-white;
   }
 
-  .section-cream {
+  .section-navy {
+    @apply bg-primary-400 text-white;
+  }
+
+  .section-light {
     @apply bg-cream;
   }
 
-  .section-gray {
-    @apply bg-cream-dark;
+  .section-cream {
+    @apply bg-cream-warm/20;
   }
 
   /* Container */
   .container-main {
-    @apply mx-auto max-w-container px-4 sm:px-6 lg:px-8;
+    @apply mx-auto max-w-7xl px-6 lg:px-8;
   }
 
   .container-narrow {
-    @apply mx-auto max-w-narrow px-4 sm:px-6 lg:px-8;
+    @apply mx-auto max-w-4xl px-6 lg:px-8;
   }
 
   .container-wide {
-    @apply mx-auto max-w-ultrawide px-4 sm:px-6 lg:px-8;
+    @apply mx-auto max-w-[1600px] px-6 lg:px-12;
   }
 
-  /* HR-Pro Heading Styles */
+  /* Jurri Heading Styles */
   .heading-display {
-    @apply text-display font-medium tracking-headline text-primary;
+    font-family: var(--font-frank-ruhl), Georgia, serif;
+    @apply text-4xl md:text-5xl lg:text-6xl font-light tracking-tight;
   }
 
   .heading-section {
-    @apply text-h2 font-semibold tracking-headline text-primary;
+    font-family: var(--font-frank-ruhl), Georgia, serif;
+    @apply text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight;
   }
 
   .heading-card {
-    @apply text-h4 font-semibold text-primary;
+    font-family: var(--font-frank-ruhl), Georgia, serif;
+    @apply text-xl md:text-2xl font-medium;
+  }
+
+  /* Section Label (small caps above headings) */
+  .section-label {
+    @apply text-sm font-medium tracking-wider uppercase text-accent;
   }
 
   /* Text utilities */
-  .text-muted {
-    @apply text-[#777272];
+  .text-muted-light {
+    @apply text-white/70;
   }
 
   .text-balance {
@@ -245,21 +259,21 @@
 
   /* Link styles */
   .link {
-    @apply text-primary hover:text-primary-600 transition-colors underline-offset-4 hover:underline;
+    @apply text-accent hover:text-accent-300 transition-colors underline-offset-4 hover:underline;
   }
 
   .link-subtle {
     @apply text-muted-foreground hover:text-foreground transition-colors;
   }
 
-  /* Premium link with animated underline */
+  /* Link with animated underline */
   .link-underline {
-    @apply relative text-primary transition-colors;
+    @apply relative text-accent transition-colors;
   }
 
   .link-underline::after {
     content: '';
-    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary;
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-accent;
     transition: width 0.3s cubic-bezier(0.25, 0.1, 0.25, 1.0);
   }
 
@@ -269,11 +283,11 @@
 
   /* Navigation link */
   .nav-link {
-    @apply text-foreground/80 hover:text-primary transition-colors font-medium;
+    @apply text-white/80 hover:text-accent transition-colors font-medium;
   }
 
   .nav-link-active {
-    @apply text-primary font-semibold;
+    @apply text-accent font-semibold;
   }
 
   /* Grid layouts */
@@ -285,22 +299,13 @@
     @apply grid grid-cols-1 md:grid-cols-2 gap-8;
   }
 
-  /* Decorative elements */
-  .gradient-overlay {
-    @apply absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/70;
-  }
-
-  .bg-gradient-primary {
-    @apply bg-gradient-to-br from-primary to-primary-600;
-  }
-
   /* Icon containers */
   .icon-container {
-    @apply flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 text-primary;
+    @apply flex items-center justify-center w-12 h-12 rounded-xl bg-accent/10 text-accent;
   }
 
   .icon-container-lg {
-    @apply flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/10 text-primary;
+    @apply flex items-center justify-center w-16 h-16 rounded-2xl bg-accent/10 text-accent;
   }
 }
 
@@ -314,84 +319,60 @@
     @apply opacity-100 translate-y-0 transition-all duration-700;
   }
 
-  /* Decorative shapes */
-  .shape-blob {
-    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  /* Text gradient - gold accent */
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent via-accent-300 to-accent;
   }
 
-  /* Text gradient - uses cyan accent for vibrant effect */
-  .text-gradient-primary {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-primary;
-  }
-
-  /* Hover glow effect - cyan accent glow */
+  /* Hover glow effect - gold glow */
   .hover-glow {
     @apply transition-shadow duration-300;
   }
 
   .hover-glow:hover {
-    box-shadow: 0 0 40px rgba(0, 153, 219, 0.2);
+    box-shadow: 0 0 40px rgba(197, 167, 136, 0.2);
   }
 
   /* Glassmorphism utilities */
   .glass {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .glass-dark {
-    background: rgba(12, 59, 106, 0.1);
+    background: rgba(13, 28, 41, 0.8);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(12, 59, 106, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.05);
   }
 
   /* Premium input styling */
   .input-premium {
-    @apply w-full px-4 py-3 rounded-xl border-2 border-border;
-    @apply transition-all duration-300 ease-out;
-    @apply focus:border-accent focus:ring-4 focus:ring-accent/10;
+    @apply w-full px-4 py-3 rounded-lg border border-border;
+    @apply bg-white transition-all duration-200 ease-out;
+    @apply focus:border-accent focus:ring-2 focus:ring-accent/20;
     @apply focus:outline-none;
   }
 
-  .input-premium:focus {
-    transform: translateY(-1px);
-    box-shadow: 0 0 20px rgba(0, 153, 219, 0.15);
-  }
-
-  /* Icon container with glow on hover */
-  .icon-glow {
-    @apply transition-all duration-300;
-  }
-
-  .icon-glow:hover {
-    box-shadow: 0 0 30px rgba(0, 153, 219, 0.25);
+  .input-dark {
+    @apply w-full px-4 py-3 rounded-lg border border-white/10;
+    @apply bg-primary-400 text-white placeholder:text-white/50;
+    @apply transition-all duration-200 ease-out;
+    @apply focus:border-accent focus:ring-2 focus:ring-accent/20;
+    @apply focus:outline-none;
   }
 
   /* Focus ring */
   .focus-ring {
-    @apply focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2;
+    @apply focus:outline-none focus:ring-2 focus:ring-accent/50 focus:ring-offset-2;
   }
 
-  /* Fancy heading gradients */
-  @supports (background-clip: text) {
-    .fancy-heading {
-      background-image: linear-gradient(
-        var(--color-primary) 10%,
-        var(--color-primary-light)
-      );
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-  }
-
-  /* Selection colors - cyan accent */
+  /* Selection colors - gold accent */
   ::selection {
-    background-color: rgba(0, 153, 219, 0.2);
-    color: var(--color-primary-dark);
+    background-color: rgba(197, 167, 136, 0.3);
+    color: var(--color-primary);
   }
 
   /* Scrollbar styling */
@@ -401,17 +382,17 @@
   }
 
   ::-webkit-scrollbar-track {
-    background-color: var(--color-cream-dark);
+    background-color: var(--color-cream);
   }
 
   ::-webkit-scrollbar-thumb {
     background-color: var(--color-border);
     border-radius: 5px;
-    border: 2px solid var(--color-cream-dark);
+    border: 2px solid var(--color-cream);
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background-color: var(--color-primary-light);
+    background-color: var(--color-accent);
   }
 
   /* Smooth reveal animations */
