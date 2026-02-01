@@ -15,19 +15,19 @@
     "workUnitsCompleted": 4
   },
   "progress": {
-    "currentWorkUnit": "Home Page",
+    "currentWorkUnit": "Products & Brands Pages",
     "completedUnits": [
       "Project Initialization",
       "Content Extraction",
       "PRD Generation",
       "Design System Setup",
       "Navigation Component",
-      "Footer Component"
+      "Footer Component",
+      "Home Page"
     ],
     "pendingUnits": [
-      "Products Pages",
-      "Brands Pages",
-      "Contact Page"
+      "Contact Page",
+      "About Page"
     ],
     "blockers": []
   },

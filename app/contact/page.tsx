@@ -1,59 +1,56 @@
 'use client';
 
 import { useState } from 'react';
-import { Metadata } from 'next';
-import { Phone, Mail, MapPin, Send } from 'lucide-react';
+import Link from 'next/link';
+import { Phone, Mail, MapPin, Send, Clock, CheckCircle } from 'lucide-react';
 
 const contactInfo = [
   {
     icon: Phone,
     title: 'Phone',
-    value: '844-247-4100',
-    href: 'tel:8442474100',
+    value: '800-910-7349',
+    href: 'tel:8009107349',
+    description: 'Call us for immediate assistance',
   },
   {
     icon: Mail,
     title: 'Email',
-    value: 'info@congruityhr.com',
-    href: 'mailto:info@congruityhr.com',
+    value: 'West@comfortside.com',
+    href: 'mailto:West@comfortside.com',
+    description: 'Send us a message anytime',
   },
   {
     icon: MapPin,
-    title: 'Location',
-    value: 'HQ in North Carolina, serving clients Nationwide',
+    title: 'Service Area',
+    value: 'Western United States',
     href: null,
+    description: 'Serving dealers across the West',
   },
 ];
 
 const contactTypes = [
-  'Potential Customer',
-  'Potential Channel Partner',
-  'Current Customer',
-  'Client Employee',
-  'Job Opportunity Seeker',
+  'New Dealer Inquiry',
+  'Existing Dealer',
+  'Product Information',
+  'Warranty/Support',
+  'General Question',
   'Other',
 ];
 
-const companySizes = [
-  '1-99',
-  '100-349',
-  '350-699',
-  '700-2499',
-  '2500-4999',
-  '5000+',
+const productInterests = [
+  'Residential Mini-Splits',
+  'Commercial/VRF Systems',
+  'All-in-One/PTAC Units',
+  'Multiple Categories',
+  'Not Sure - Need Guidance',
 ];
 
 const referralSources = [
   'Google Search',
+  'Industry Referral',
+  'Trade Show',
+  'Manufacturer Referral',
   'LinkedIn',
-  'Referral/Recommendation',
-  'SHRM',
-  'ESPN',
-  'Facebook',
-  'Instagram',
-  'YouTube',
-  'X (Twitter)',
-  'NHRA',
   'Other',
 ];
 
@@ -64,8 +61,8 @@ export default function ContactPage() {
     email: '',
     phone: '',
     company: '',
-    companySize: '',
     contactType: '',
+    productInterest: '',
     referralSource: '',
     message: '',
   });
@@ -96,11 +93,11 @@ export default function ContactPage() {
           <div className="max-w-3xl mx-auto text-center">
             <span className="badge badge-primary mb-4">Contact Us</span>
             <h1 className="text-h1 text-primary mb-6">
-              Let's Start a Conversation
+              Let's Talk HVAC
             </h1>
             <p className="text-lg text-muted-foreground">
-              Have questions about our HR solutions? We'd love to hear from you.
-              Get in touch and let's discuss how Congruity HR can help your business.
+              Whether you're interested in becoming a dealer, need product information,
+              or have questions about our services, we're here to help.
             </p>
           </div>
         </div>
@@ -116,8 +113,8 @@ export default function ContactPage() {
               <div className="space-y-6 mb-8">
                 {contactInfo.map((info, index) => (
                   <div key={index} className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <info.icon className="w-5 h-5 text-primary" />
+                    <div className="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center flex-shrink-0">
+                      <info.icon className="w-5 h-5 text-accent" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-foreground mb-1">
@@ -126,34 +123,54 @@ export default function ContactPage() {
                       {info.href ? (
                         <a
                           href={info.href}
-                          className="text-muted-foreground hover:text-primary transition-colors"
+                          className="text-primary font-medium hover:text-primary/80 transition-colors"
                         >
                           {info.value}
                         </a>
                       ) : (
-                        <p className="text-muted-foreground">{info.value}</p>
+                        <p className="text-primary font-medium">{info.value}</p>
                       )}
+                      <p className="text-sm text-muted-foreground mt-1">{info.description}</p>
                     </div>
                   </div>
                 ))}
               </div>
 
               {/* Office Hours */}
-              <div className="bg-white rounded-card p-6 shadow-soft">
-                <h3 className="font-semibold text-foreground mb-4">Office Hours</h3>
+              <div className="bg-white rounded-card p-6 shadow-soft mb-6">
+                <h3 className="font-semibold text-foreground mb-4 flex items-center gap-2">
+                  <Clock className="w-5 h-5 text-accent" />
+                  Business Hours
+                </h3>
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Monday - Friday</span>
-                    <span className="font-medium">8:00 AM - 6:00 PM EST</span>
+                    <span className="font-medium">8:00 AM - 5:00 PM PST</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Saturday - Sunday</span>
+                    <span className="text-muted-foreground">Saturday</span>
+                    <span className="font-medium">By Appointment</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Sunday</span>
                     <span className="font-medium">Closed</span>
                   </div>
                 </div>
-                <p className="text-xs text-muted-foreground mt-4">
-                  24/7 emergency support available for clients
+              </div>
+
+              {/* Dealer Benefits CTA */}
+              <div className="bg-primary rounded-card p-6 text-white">
+                <h3 className="font-semibold mb-3">Become a Dealer</h3>
+                <p className="text-sm text-white/80 mb-4">
+                  Join our network of 500+ dealers and get access to wholesale pricing,
+                  training, and dedicated support.
                 </p>
+                <Link
+                  href="/dealer-program"
+                  className="inline-flex items-center gap-2 bg-white text-primary px-4 py-2 rounded-button font-medium text-sm hover:bg-cream transition-colors"
+                >
+                  Learn More
+                </Link>
               </div>
             </div>
 
@@ -163,101 +180,108 @@ export default function ContactPage() {
                 {submitSuccess ? (
                   <div className="text-center py-12">
                     <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-6">
-                      <Send className="w-8 h-8 text-green-600" />
+                      <CheckCircle className="w-8 h-8 text-green-600" />
                     </div>
-                    <h2 className="text-h3 text-primary mb-4">Message Sent!</h2>
+                    <h2 className="text-h3 text-primary mb-4">Message Received!</h2>
                     <p className="text-muted-foreground mb-6">
-                      Thank you for contacting us. We'll get back to you within 24 hours.
+                      Thank you for reaching out. A member of our team will get back to you
+                      within 1 business day.
                     </p>
-                    <button
-                      onClick={() => setSubmitSuccess(false)}
-                      className="btn btn-secondary"
-                    >
-                      Send Another Message
-                    </button>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                      <button
+                        onClick={() => setSubmitSuccess(false)}
+                        className="btn btn-secondary"
+                      >
+                        Send Another Message
+                      </button>
+                      <Link href="/products" className="btn btn-primary">
+                        Browse Products
+                      </Link>
+                    </div>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid sm:grid-cols-2 gap-6">
-                      <div>
-                        <label
-                          htmlFor="firstName"
-                          className="block text-sm font-medium text-foreground mb-2"
-                        >
-                          First Name *
-                        </label>
-                        <input
-                          type="text"
-                          id="firstName"
-                          name="firstName"
-                          required
-                          value={formData.firstName}
-                          onChange={handleChange}
-                          className="w-full px-4 py-3 rounded-xl border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
-                        />
+                  <>
+                    <h2 className="text-xl font-semibold text-primary mb-6">Send Us a Message</h2>
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                      <div className="grid sm:grid-cols-2 gap-6">
+                        <div>
+                          <label
+                            htmlFor="firstName"
+                            className="block text-sm font-medium text-foreground mb-2"
+                          >
+                            First Name *
+                          </label>
+                          <input
+                            type="text"
+                            id="firstName"
+                            name="firstName"
+                            required
+                            value={formData.firstName}
+                            onChange={handleChange}
+                            className="w-full px-4 py-3 rounded-xl border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                          />
+                        </div>
+                        <div>
+                          <label
+                            htmlFor="lastName"
+                            className="block text-sm font-medium text-foreground mb-2"
+                          >
+                            Last Name *
+                          </label>
+                          <input
+                            type="text"
+                            id="lastName"
+                            name="lastName"
+                            required
+                            value={formData.lastName}
+                            onChange={handleChange}
+                            className="w-full px-4 py-3 rounded-xl border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                          />
+                        </div>
                       </div>
-                      <div>
-                        <label
-                          htmlFor="lastName"
-                          className="block text-sm font-medium text-foreground mb-2"
-                        >
-                          Last Name *
-                        </label>
-                        <input
-                          type="text"
-                          id="lastName"
-                          name="lastName"
-                          required
-                          value={formData.lastName}
-                          onChange={handleChange}
-                          className="w-full px-4 py-3 rounded-xl border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
-                        />
-                      </div>
-                    </div>
 
-                    <div className="grid sm:grid-cols-2 gap-6">
-                      <div>
-                        <label
-                          htmlFor="email"
-                          className="block text-sm font-medium text-foreground mb-2"
-                        >
-                          Email *
-                        </label>
-                        <input
-                          type="email"
-                          id="email"
-                          name="email"
-                          required
-                          value={formData.email}
-                          onChange={handleChange}
-                          className="w-full px-4 py-3 rounded-xl border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
-                        />
+                      <div className="grid sm:grid-cols-2 gap-6">
+                        <div>
+                          <label
+                            htmlFor="email"
+                            className="block text-sm font-medium text-foreground mb-2"
+                          >
+                            Email *
+                          </label>
+                          <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            required
+                            value={formData.email}
+                            onChange={handleChange}
+                            className="w-full px-4 py-3 rounded-xl border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                          />
+                        </div>
+                        <div>
+                          <label
+                            htmlFor="phone"
+                            className="block text-sm font-medium text-foreground mb-2"
+                          >
+                            Phone
+                          </label>
+                          <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            value={formData.phone}
+                            onChange={handleChange}
+                            className="w-full px-4 py-3 rounded-xl border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                          />
+                        </div>
                       </div>
-                      <div>
-                        <label
-                          htmlFor="phone"
-                          className="block text-sm font-medium text-foreground mb-2"
-                        >
-                          Phone
-                        </label>
-                        <input
-                          type="tel"
-                          id="phone"
-                          name="phone"
-                          value={formData.phone}
-                          onChange={handleChange}
-                          className="w-full px-4 py-3 rounded-xl border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
-                        />
-                      </div>
-                    </div>
 
-                    <div className="grid sm:grid-cols-2 gap-6">
                       <div>
                         <label
                           htmlFor="company"
                           className="block text-sm font-medium text-foreground mb-2"
                         >
-                          Company
+                          Company Name
                         </label>
                         <input
                           type="text"
@@ -268,53 +292,55 @@ export default function ContactPage() {
                           className="w-full px-4 py-3 rounded-xl border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
                         />
                       </div>
-                      <div>
-                        <label
-                          htmlFor="companySize"
-                          className="block text-sm font-medium text-foreground mb-2"
-                        >
-                          Company Size
-                        </label>
-                        <select
-                          id="companySize"
-                          name="companySize"
-                          value={formData.companySize}
-                          onChange={handleChange}
-                          className="w-full px-4 py-3 rounded-xl border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
-                        >
-                          <option value="">Select...</option>
-                          {companySizes.map((size) => (
-                            <option key={size} value={size}>
-                              {size} employees
-                            </option>
-                          ))}
-                        </select>
-                      </div>
-                    </div>
 
-                    <div className="grid sm:grid-cols-2 gap-6">
-                      <div>
-                        <label
-                          htmlFor="contactType"
-                          className="block text-sm font-medium text-foreground mb-2"
-                        >
-                          I am a...
-                        </label>
-                        <select
-                          id="contactType"
-                          name="contactType"
-                          value={formData.contactType}
-                          onChange={handleChange}
-                          className="w-full px-4 py-3 rounded-xl border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
-                        >
-                          <option value="">Select...</option>
-                          {contactTypes.map((type) => (
-                            <option key={type} value={type}>
-                              {type}
-                            </option>
-                          ))}
-                        </select>
+                      <div className="grid sm:grid-cols-2 gap-6">
+                        <div>
+                          <label
+                            htmlFor="contactType"
+                            className="block text-sm font-medium text-foreground mb-2"
+                          >
+                            I am a... *
+                          </label>
+                          <select
+                            id="contactType"
+                            name="contactType"
+                            required
+                            value={formData.contactType}
+                            onChange={handleChange}
+                            className="w-full px-4 py-3 rounded-xl border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                          >
+                            <option value="">Select...</option>
+                            {contactTypes.map((type) => (
+                              <option key={type} value={type}>
+                                {type}
+                              </option>
+                            ))}
+                          </select>
+                        </div>
+                        <div>
+                          <label
+                            htmlFor="productInterest"
+                            className="block text-sm font-medium text-foreground mb-2"
+                          >
+                            Product Interest
+                          </label>
+                          <select
+                            id="productInterest"
+                            name="productInterest"
+                            value={formData.productInterest}
+                            onChange={handleChange}
+                            className="w-full px-4 py-3 rounded-xl border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                          >
+                            <option value="">Select...</option>
+                            {productInterests.map((interest) => (
+                              <option key={interest} value={interest}>
+                                {interest}
+                              </option>
+                            ))}
+                          </select>
+                        </div>
                       </div>
+
                       <div>
                         <label
                           htmlFor="referralSource"
@@ -337,37 +363,100 @@ export default function ContactPage() {
                           ))}
                         </select>
                       </div>
-                    </div>
 
-                    <div>
-                      <label
-                        htmlFor="message"
-                        className="block text-sm font-medium text-foreground mb-2"
-                      >
-                        Message
-                      </label>
-                      <textarea
-                        id="message"
-                        name="message"
-                        rows={4}
-                        value={formData.message}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-xl border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none"
-                        placeholder="Tell us about your HR needs..."
-                      />
-                    </div>
+                      <div>
+                        <label
+                          htmlFor="message"
+                          className="block text-sm font-medium text-foreground mb-2"
+                        >
+                          Message
+                        </label>
+                        <textarea
+                          id="message"
+                          name="message"
+                          rows={4}
+                          value={formData.message}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 rounded-xl border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none"
+                          placeholder="Tell us about your HVAC needs, projects, or questions..."
+                        />
+                      </div>
 
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="btn btn-primary w-full sm:w-auto"
-                    >
-                      {isSubmitting ? 'Sending...' : 'Send Message'}
-                    </button>
-                  </form>
+                      <div className="flex flex-col sm:flex-row gap-4">
+                        <button
+                          type="submit"
+                          disabled={isSubmitting}
+                          className="btn btn-primary flex-1 sm:flex-initial"
+                        >
+                          {isSubmitting ? 'Sending...' : 'Send Message'}
+                          <Send className="w-4 h-4" />
+                        </button>
+                        <a
+                          href="tel:8009107349"
+                          className="btn btn-secondary flex-1 sm:flex-initial"
+                        >
+                          <Phone className="w-4 h-4" />
+                          Or Call: 800-910-7349
+                        </a>
+                      </div>
+                    </form>
+                  </>
                 )}
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Quick Links Section */}
+      <section className="section bg-cream">
+        <div className="container-main">
+          <div className="text-center mb-12">
+            <h2 className="text-h2 text-primary mb-4">Quick Links</h2>
+            <p className="text-muted-foreground">
+              Find what you're looking for faster
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <Link
+              href="/products"
+              className="group bg-white rounded-2xl p-6 shadow-soft hover:shadow-card transition-all text-center"
+            >
+              <div className="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center mx-auto mb-4 group-hover:bg-accent/25 transition-colors">
+                <span className="text-2xl">🔧</span>
+              </div>
+              <h3 className="font-semibold text-primary mb-2">Browse Products</h3>
+              <p className="text-sm text-muted-foreground">
+                Explore our full catalog of mini-split and VRF systems
+              </p>
+            </Link>
+
+            <Link
+              href="/brands"
+              className="group bg-white rounded-2xl p-6 shadow-soft hover:shadow-card transition-all text-center"
+            >
+              <div className="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center mx-auto mb-4 group-hover:bg-accent/25 transition-colors">
+                <span className="text-2xl">⭐</span>
+              </div>
+              <h3 className="font-semibold text-primary mb-2">Our Brands</h3>
+              <p className="text-sm text-muted-foreground">
+                Learn about Cooper&Hunter, Olmo, and Bravo
+              </p>
+            </Link>
+
+            <Link
+              href="/dealer-program"
+              className="group bg-white rounded-2xl p-6 shadow-soft hover:shadow-card transition-all text-center"
+            >
+              <div className="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center mx-auto mb-4 group-hover:bg-accent/25 transition-colors">
+                <span className="text-2xl">🤝</span>
+              </div>
+              <h3 className="font-semibold text-primary mb-2">Dealer Program</h3>
+              <p className="text-sm text-muted-foreground">
+                Join our network of 500+ successful dealers
+              </p>
+            </Link>
           </div>
         </div>
       </section>
