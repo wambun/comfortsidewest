@@ -123,7 +123,7 @@ export default function RootLayout({
           <AnalyticsWrapper />
           <SearchProvider>
             <Header />
-            <main className="flex-1">
+            <main className="flex-1 pt-[104px] lg:pt-[116px]">
               {children}
             </main>
             <Footer />

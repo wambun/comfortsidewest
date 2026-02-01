@@ -6,42 +6,41 @@ export const footerLinks: Array<{
   }>;
 }> = [
   {
-    columnName: 'Services',
+    columnName: 'Products',
     links: [
-      { href: '/services/peo-services', title: 'PEO Services' },
-      { href: '/services/aso-services', title: 'ASO Services' },
-      { href: '/services/hr-solutions', title: 'HR Solutions' },
-      { href: '/services/employee-benefits', title: 'Employee Benefits' },
-      { href: '/services/compliance-risk', title: 'Compliance & Risk' },
+      { href: '/products/residential', title: 'Residential' },
+      { href: '/products/commercial', title: 'Commercial/VRF' },
+      { href: '/products/all-in-one', title: 'All-in-One' },
     ],
   },
   {
-    columnName: 'Industries',
+    columnName: 'Brands',
     links: [
-      { href: '/industries/professional-services', title: 'Professional Services' },
-      { href: '/industries/healthcare', title: 'Healthcare' },
-      { href: '/industries/hospitality', title: 'Hospitality' },
-      { href: '/industries/financial-services', title: 'Financial Services' },
-      { href: '/industries/manufacturing', title: 'Manufacturing' },
-      { href: '/industries/retail', title: 'Retail' },
+      { href: '/brands/cooper-hunter', title: 'Cooper&Hunter' },
+      { href: '/brands/olmo', title: 'Olmo' },
+      { href: '/brands/bravo', title: 'Bravo' },
     ],
   },
   {
     columnName: 'Company',
     links: [
+      { href: '/', title: 'Home' },
       { href: '/about', title: 'About Us' },
-      { href: '/about/team', title: 'Our Team' },
-      { href: '/about/why-congruity', title: 'Why Congruity' },
-      { href: '/resources/blog', title: 'Blog' },
+      { href: '/dealer-program', title: 'Dealer Program' },
       { href: '/contact', title: 'Contact' },
     ],
   },
   {
-    columnName: 'Partners',
+    columnName: 'Legal',
     links: [
-      { href: '/partners/brokers', title: 'Brokers' },
-      { href: '/partners/referrals', title: 'Referrals' },
-      { href: '/partners/strategic-alliances', title: 'Strategic Alliances' },
+      { href: '/privacy-policy', title: 'Privacy Policy' },
+      { href: '/terms', title: 'Terms & Conditions' },
     ],
   },
 ];
+
+export const socialLinks = {
+  facebook: 'https://www.facebook.com/people/Comfortside-West-LLC/61556712921612/',
+  linkedin: 'https://www.linkedin.com/company/comfortside-west-llc/',
+  bbb: 'https://www.bbb.org/us/tx/lancaster/profile/ductless-ac/comfortside-west-llc-0875-91342427',
+};
