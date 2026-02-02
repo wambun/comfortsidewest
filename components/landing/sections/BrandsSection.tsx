@@ -43,7 +43,7 @@ const brands = [
 
 export function BrandsSection() {
   return (
-    <section className="section bg-cream">
+    <section className="section bg-white">
       <div className="container-main">
         {/* Section Header */}
         <motion.div
@@ -55,7 +55,7 @@ export function BrandsSection() {
         >
           <span className="badge badge-primary mb-4">Our Brands</span>
           <h2 className="text-h2 text-primary mb-4">
-            Premium <span className="text-gradient-primary">HVAC Brands</span>
+            Premium HVAC Brands
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             We partner with industry-leading manufacturers to bring you the best
@@ -75,14 +75,13 @@ export function BrandsSection() {
             >
               <Link
                 href={brand.href}
-                className="group block bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-card transition-all duration-300 hover:-translate-y-2 h-full"
+                className="group block bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 h-full border border-gray-100"
               >
                 {/* Image Header */}
                 <div className="relative h-48 overflow-hidden">
-                  <div className={`absolute inset-0 bg-gradient-to-br ${brand.accent}`} />
-                  <div className="absolute inset-0 bg-primary/80 flex items-center justify-center">
+                  <div className="absolute inset-0 bg-primary flex items-center justify-center">
                     <div className="text-center text-white">
-                      <h3 className="text-3xl font-heading font-semibold mb-1">{brand.name}</h3>
+                      <h3 className="text-3xl font-semibold mb-1">{brand.name}</h3>
                       <p className="text-white/80 text-sm">{brand.tagline}</p>
                     </div>
                   </div>
@@ -125,25 +124,25 @@ export function BrandsSection() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="mt-12 lg:mt-16"
         >
-          <div className="bg-primary/5 rounded-2xl p-8 lg:p-10">
+          <div className="bg-gray-50 rounded-lg p-8 lg:p-10 border border-gray-100">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
               <div className="flex flex-col items-center">
-                <div className="w-14 h-14 rounded-2xl bg-accent/15 flex items-center justify-center mb-4">
-                  <Award className="w-7 h-7 text-accent" />
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <Award className="w-7 h-7 text-primary" />
                 </div>
                 <h4 className="font-semibold text-primary mb-1">Authorized Distributor</h4>
                 <p className="text-sm text-muted-foreground">Official wholesale partner for all brands</p>
               </div>
               <div className="flex flex-col items-center">
-                <div className="w-14 h-14 rounded-2xl bg-accent/15 flex items-center justify-center mb-4">
-                  <Shield className="w-7 h-7 text-accent" />
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <Shield className="w-7 h-7 text-primary" />
                 </div>
                 <h4 className="font-semibold text-primary mb-1">Full Warranty Support</h4>
                 <p className="text-sm text-muted-foreground">Complete manufacturer warranty coverage</p>
               </div>
               <div className="flex flex-col items-center">
-                <div className="w-14 h-14 rounded-2xl bg-accent/15 flex items-center justify-center mb-4">
-                  <Star className="w-7 h-7 text-accent" />
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <Star className="w-7 h-7 text-primary" />
                 </div>
                 <h4 className="font-semibold text-primary mb-1">Expert Training</h4>
                 <p className="text-sm text-muted-foreground">Product training and technical support</p>

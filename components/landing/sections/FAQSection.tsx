@@ -42,7 +42,7 @@ export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="section bg-cream-dark">
+    <section className="section bg-gray-50">
       <div className="container-main">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Left Column - Header */}
@@ -80,7 +80,7 @@ export function FAQSection() {
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl shadow-soft overflow-hidden"
+                className="bg-white rounded-lg shadow-sm overflow-hidden border border-gray-100"
               >
                 <button
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}

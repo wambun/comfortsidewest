@@ -40,10 +40,13 @@ const Footer = () => {
           {/* Logo and Social Links */}
           <div className="lg:col-span-4">
             <Link href="/" className="flex items-center gap-3 group mb-6">
-              <div className="w-10 h-10 rounded-xl bg-accent flex items-center justify-center">
-                <span className="text-primary font-bold text-lg">CW</span>
+              <div className="flex items-center">
+                <span className="text-3xl font-bold">
+                  <span className="text-accent">C</span>
+                  <span className="text-white">H</span>
+                </span>
               </div>
-              <span className="text-white font-heading text-xl font-medium group-hover:text-accent transition-colors">
+              <span className="text-white text-xl font-semibold group-hover:text-white/80 transition-colors">
                 Comfortside West
               </span>
             </Link>
@@ -55,7 +58,7 @@ const Footer = () => {
                 href={socialLinks.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-accent hover:text-primary transition-all"
+                className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-white/20 transition-all"
                 aria-label="Facebook"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -66,7 +69,7 @@ const Footer = () => {
                 href={socialLinks.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-accent hover:text-primary transition-all"
+                className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-white/20 transition-all"
                 aria-label="LinkedIn"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -77,7 +80,7 @@ const Footer = () => {
                 href={socialLinks.bbb}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-accent hover:text-primary transition-all"
+                className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-white/20 transition-all"
                 aria-label="Better Business Bureau"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -92,7 +95,7 @@ const Footer = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {footerLinks.map((column) => (
                 <div key={column.columnName}>
-                  <h3 className="text-accent uppercase text-xs font-semibold tracking-wider mb-4 pb-2 border-b border-white/10">
+                  <h3 className="text-white uppercase text-xs font-semibold tracking-wider mb-4 pb-2 border-b border-white/10">
                     {column.columnName}
                   </h3>
                   <ul className="space-y-3">
@@ -100,12 +103,9 @@ const Footer = () => {
                       <li key={link.href}>
                         <Link
                           href={link.href}
-                          className="text-white/60 hover:text-white text-sm transition-colors flex items-center gap-2"
+                          className="text-white/60 hover:text-white text-sm transition-colors"
                         >
-                          <span className="text-accent">-</span>
-                          <span className="uppercase text-xs tracking-wide">
-                            {link.title}
-                          </span>
+                          {link.title}
                         </Link>
                       </li>
                     ))}

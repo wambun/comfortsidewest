@@ -27,10 +27,10 @@ export function CTASection({
 }: CTASectionProps) {
   const bgClass =
     variant === 'light'
-      ? 'bg-cream-dark'
+      ? 'bg-gray-50'
       : variant === 'dark'
       ? 'bg-primary'
-      : 'bg-gradient-to-br from-primary to-teal-dark';
+      : 'bg-primary';
 
   const textClass = variant === 'light' ? 'text-primary' : 'text-white';
   const descClass = variant === 'light' ? 'text-muted-foreground' : 'text-white/80';
@@ -67,7 +67,7 @@ export function CTASection({
               className={`btn ${
                 variant === 'light'
                   ? 'btn-primary'
-                  : 'bg-white text-primary hover:bg-cream'
+                  : 'bg-white text-primary hover:bg-gray-100'
               } text-base px-8 py-4 group`}
             >
               {primaryCTA.text}

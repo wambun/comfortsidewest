@@ -63,8 +63,8 @@ module.exports = {
       },
       fontFamily: {
         sans: ['var(--font-montserrat)', 'var(--font-inter)', ...fontFamily.sans],
-        display: ['var(--font-frank-ruhl)', 'Georgia', 'serif'],
-        heading: ['var(--font-frank-ruhl)', 'Georgia', 'serif'],
+        display: ['var(--font-montserrat)', 'var(--font-inter)', ...fontFamily.sans],
+        heading: ['var(--font-montserrat)', 'var(--font-inter)', ...fontFamily.sans],
         body: ['var(--font-montserrat)', 'var(--font-inter)', ...fontFamily.sans],
       },
       colors: {

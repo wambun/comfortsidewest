@@ -63,7 +63,7 @@ const itemVariants = {
 
 export function ServicesSection() {
   return (
-    <section className="section bg-cream-dark">
+    <section className="section bg-gray-50">
       <div className="container-main">
         {/* Section Header */}
         <motion.div
@@ -75,7 +75,7 @@ export function ServicesSection() {
         >
           <span className="badge badge-primary mb-4">Our Products</span>
           <h2 className="text-h2 text-primary mb-4">
-            Ductless <span className="text-gradient-primary">HVAC Solutions</span>
+            Ductless HVAC Solutions
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             We offer a complete range of ductless mini-split systems to meet every
@@ -95,15 +95,13 @@ export function ServicesSection() {
             <motion.div key={product.title} variants={itemVariants}>
               <Link
                 href={product.href}
-                className="group block card-premium p-8 h-full relative overflow-hidden"
+                className="group block bg-white rounded-lg shadow-sm hover:shadow-md p-8 h-full relative overflow-hidden transition-shadow duration-300 border border-gray-100"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-card" />
-
                 <div className="relative z-10">
                   <motion.div
-                    whileHover={{ scale: 1.1, rotate: 3 }}
+                    whileHover={{ scale: 1.05 }}
                     transition={{ type: 'spring', stiffness: 300, damping: 15 }}
-                    className={`w-14 h-14 rounded-2xl ${product.iconBg} flex items-center justify-center mb-6 icon-glow`}
+                    className={`w-14 h-14 rounded-xl ${product.iconBg} flex items-center justify-center mb-6`}
                   >
                     <product.icon className="w-7 h-7 text-primary" />
                   </motion.div>
@@ -124,7 +122,7 @@ export function ServicesSection() {
 
           {/* CTA Card */}
           <motion.div variants={itemVariants}>
-            <div className="bg-primary rounded-card p-8 h-full flex flex-col justify-center text-white">
+            <div className="bg-primary rounded-lg p-8 h-full flex flex-col justify-center text-white">
               <h3 className="text-2xl font-semibold mb-4">
                 Need help choosing the right system?
               </h3>
@@ -133,7 +131,7 @@ export function ServicesSection() {
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 bg-white text-primary rounded-button px-6 py-3 font-medium hover:bg-cream transition-colors group"
+                className="inline-flex items-center justify-center gap-2 bg-white text-primary rounded-md px-6 py-3 font-medium hover:bg-gray-100 transition-colors group"
               >
                 Contact Us
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

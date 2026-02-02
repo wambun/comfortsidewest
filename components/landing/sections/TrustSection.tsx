@@ -28,7 +28,7 @@ const stats = [
 
 export function TrustSection() {
   return (
-    <section className="py-16 lg:py-20 bg-cream">
+    <section className="py-12 lg:py-16 bg-gray-50 border-y border-gray-200">
       <div className="container-main">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -46,13 +46,13 @@ export function TrustSection() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="text-center"
             >
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 mb-4">
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 mb-4">
                 <stat.icon className="w-6 h-6 text-primary" />
               </div>
-              <div className="text-4xl lg:text-5xl font-heading font-semibold text-primary mb-2">
+              <div className="text-3xl lg:text-4xl font-bold text-primary mb-1">
                 {stat.value}
               </div>
-              <div className="text-sm text-muted-foreground tracking-wide">
+              <div className="text-sm text-gray-600 font-medium">
                 {stat.label}
               </div>
             </motion.div>

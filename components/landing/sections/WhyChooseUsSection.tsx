@@ -44,11 +44,7 @@ const features = [
 
 export function WhyChooseUsSection() {
   return (
-    <section className="section bg-cream relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute -top-20 -left-20 w-64 h-64 bg-accent/10 rounded-full blur-3xl" />
-      <div className="absolute -bottom-20 -right-20 w-48 h-48 bg-primary/10 rounded-full blur-3xl" />
-
+    <section className="section bg-white relative overflow-hidden">
       <div className="container-main relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Column - Content */}
@@ -60,7 +56,7 @@ export function WhyChooseUsSection() {
           >
             <span className="badge badge-primary mb-4">Why Comfortside West</span>
             <h2 className="text-h2 text-primary mb-6">
-              Your Trusted <span className="text-gradient-primary">HVAC Partner</span>
+              Your Trusted HVAC Partner
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
               As a leading wholesale distributor of ductless HVAC systems, we're committed
@@ -79,9 +75,9 @@ export function WhyChooseUsSection() {
                   className="flex gap-4 group"
                 >
                   <motion.div
-                    whileHover={{ scale: 1.1 }}
+                    whileHover={{ scale: 1.05 }}
                     transition={{ type: 'spring', stiffness: 300, damping: 15 }}
-                    className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 icon-glow transition-colors group-hover:bg-primary/15"
+                    className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 transition-colors group-hover:bg-primary/15"
                   >
                     <feature.icon className="w-6 h-6 text-primary" />
                   </motion.div>
@@ -106,14 +102,14 @@ export function WhyChooseUsSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="relative"
           >
-            <div className="relative bg-white rounded-3xl shadow-card p-8">
+            <div className="relative bg-gray-50 rounded-lg shadow-sm p-8 border border-gray-100">
               {/* Stats */}
               <div className="grid grid-cols-2 gap-6 mb-8">
-                <div className="text-center p-6 bg-cream-dark rounded-2xl">
+                <div className="text-center p-6 bg-white rounded-lg border border-gray-100">
                   <div className="text-4xl font-bold text-primary mb-2">15+</div>
                   <div className="text-sm text-muted-foreground">Years in Business</div>
                 </div>
-                <div className="text-center p-6 bg-cream-dark rounded-2xl">
+                <div className="text-center p-6 bg-white rounded-lg border border-gray-100">
                   <div className="text-4xl font-bold text-primary mb-2">500+</div>
                   <div className="text-sm text-muted-foreground">Active Dealers</div>
                 </div>
@@ -128,7 +124,7 @@ export function WhyChooseUsSection() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
-                    className="flex items-center gap-4 p-4 bg-cream-dark rounded-xl"
+                    className="flex items-center gap-4 p-4 bg-white rounded-lg border border-gray-100"
                   >
                     <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                       <feature.icon className="w-5 h-5 text-primary" />
@@ -141,9 +137,6 @@ export function WhyChooseUsSection() {
                 ))}
               </div>
             </div>
-
-            {/* Decorative element */}
-            <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-primary/10 rounded-full -z-10" />
           </motion.div>
         </div>
       </div>

@@ -2,51 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Google Fonts Import - Jurri Template Typography */
-@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700&family=Inter:wght@400;500;600;700&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,500;1,700&display=swap');
+/* Google Fonts Import - Cooper&Hunter Style Typography */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,700&display=swap');
 
 @layer base {
   :root {
-    /* Jurri Template Color Tokens */
-    --color-primary: #0d1c29;           /* Deep Navy */
-    --color-primary-light: #132030;
-    --color-primary-dark: #091318;
-    --color-accent: #c5a788;            /* Warm Gold */
-    --color-accent-light: #d4c0a5;
-    --color-accent-dark: #a68a6a;
-    --color-secondary: #1b273a;         /* Card backgrounds */
-    --color-tertiary: #132030;          /* Alternate sections */
-    --color-cream: #f9f9f9;             /* Light background */
-    --color-cream-warm: #ead3bc;        /* Warm accent */
-    --color-border: #e8eded;
-    --color-text-muted: rgba(255, 255, 255, 0.7);
+    /* Cooper&Hunter Color Tokens */
+    --color-primary: #003366;           /* C&H Deep Blue */
+    --color-primary-light: #0d4070;
+    --color-primary-dark: #002855;
+    --color-accent: #C41E3A;            /* C&H Red */
+    --color-accent-light: #d93a4c;
+    --color-accent-dark: #a31830;
+    --color-secondary: #f5f5f5;         /* Light backgrounds */
+    --color-tertiary: #e5e5e5;          /* Alternate sections */
+    --color-white: #ffffff;
+    --color-light-blue: #f0f7ff;        /* Subtle blue tint */
+    --color-border: #e5e5e5;
+    --color-text-muted: #64748b;
 
     /* Shadows */
     --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
     --shadow-card-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
 
-    /* Shadcn UI tokens - Dark Navy Theme */
-    --background: 0 0% 98%;
-    --foreground: 210 24% 10%;
+    /* Shadcn UI tokens - Light Theme with Blue Accent */
+    --background: 0 0% 100%;
+    --foreground: 210 24% 16%;
     --card: 0 0% 100%;
-    --card-foreground: 210 24% 10%;
+    --card-foreground: 210 24% 16%;
     --popover: 0 0% 100%;
-    --popover-foreground: 210 24% 10%;
-    --primary: 210 50% 11%;             /* Deep Navy */
-    --primary-foreground: 0 0% 98%;
-    --secondary: 210 20% 96%;
-    --secondary-foreground: 210 24% 10%;
-    --muted: 210 20% 96%;
+    --popover-foreground: 210 24% 16%;
+    --primary: 210 100% 20%;           /* C&H Blue */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 210 24% 16%;
+    --muted: 0 0% 96%;
     --muted-foreground: 210 10% 45%;
-    --accent: 32 35% 65%;               /* Warm Gold */
-    --accent-foreground: 210 24% 10%;
+    --accent: 350 75% 44%;             /* C&H Red */
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
     --border: 210 15% 90%;
     --input: 210 15% 90%;
-    --ring: 32 35% 65%;                 /* Gold for focus rings */
-    --radius: 0.75rem;
+    --ring: 210 100% 20%;              /* Blue for focus rings */
+    --radius: 0.5rem;
   }
 
   .dark {
@@ -56,19 +56,19 @@
     --card-foreground: 0 0% 98%;
     --popover: 210 40% 12%;
     --popover-foreground: 0 0% 98%;
-    --primary: 32 35% 65%;              /* Gold becomes primary in dark */
+    --primary: 0 0% 100%;
     --primary-foreground: 210 50% 8%;
     --secondary: 210 30% 18%;
     --secondary-foreground: 0 0% 98%;
     --muted: 210 30% 18%;
     --muted-foreground: 210 10% 60%;
-    --accent: 32 35% 65%;
-    --accent-foreground: 210 50% 8%;
+    --accent: 350 75% 44%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 62% 30%;
     --destructive-foreground: 0 86% 97%;
     --border: 210 30% 20%;
     --input: 210 30% 20%;
-    --ring: 32 35% 65%;
+    --ring: 350 75% 44%;
   }
 
   * {
@@ -80,31 +80,31 @@
   }
 
   body {
-    @apply bg-cream text-foreground antialiased;
+    @apply bg-white text-foreground antialiased;
     font-family: var(--font-montserrat), var(--font-inter), system-ui, sans-serif;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
-  /* Jurri-inspired Typography */
+  /* Cooper&Hunter Style Typography - Sans-serif throughout */
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-frank-ruhl), Georgia, serif;
-    @apply tracking-tight;
+    font-family: var(--font-montserrat), var(--font-inter), system-ui, sans-serif;
+    @apply font-bold tracking-tight;
   }
 
   h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl font-light leading-tight;
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold leading-tight;
   }
 
   h2 {
-    @apply text-3xl md:text-4xl lg:text-5xl font-normal leading-tight;
+    @apply text-2xl md:text-3xl lg:text-4xl font-bold leading-tight;
   }
 
   h3 {
-    @apply text-2xl md:text-3xl font-medium leading-snug;
+    @apply text-xl md:text-2xl font-bold leading-snug;
   }
 
   h4 {
-    @apply text-xl md:text-2xl font-medium leading-snug;
+    @apply text-lg md:text-xl font-semibold leading-snug;
   }
 
   p {
@@ -113,44 +113,54 @@
 }
 
 @layer components {
-  /* Jurri Button Styles */
+  /* Cooper&Hunter Button Styles */
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-semibold;
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-6 py-3 text-sm font-semibold uppercase tracking-wide;
     @apply transition-all duration-200 ease-out;
-    @apply focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
   }
 
   .btn-primary {
-    @apply bg-accent text-primary;
-    @apply hover:bg-accent-300 hover:shadow-lg;
+    @apply bg-primary text-white;
+    @apply hover:bg-primary-600 hover:shadow-lg;
+  }
+
+  .btn-accent {
+    @apply bg-accent text-white;
+    @apply hover:bg-accent-600 hover:shadow-lg;
   }
 
   .btn-secondary {
-    @apply bg-transparent text-white border border-accent;
-    @apply hover:bg-accent hover:text-primary;
+    @apply bg-transparent text-primary border-2 border-primary;
+    @apply hover:bg-primary hover:text-white;
   }
 
   .btn-outline {
-    @apply bg-transparent text-accent border-2 border-accent;
-    @apply hover:bg-accent hover:text-primary;
+    @apply bg-transparent text-primary border-2 border-primary;
+    @apply hover:bg-primary hover:text-white;
+  }
+
+  .btn-outline-white {
+    @apply bg-transparent text-white border-2 border-white;
+    @apply hover:bg-white hover:text-primary;
   }
 
   .btn-ghost {
-    @apply bg-transparent text-accent hover:bg-accent/10;
+    @apply bg-transparent text-primary hover:bg-primary/10;
   }
 
-  .btn-dark {
-    @apply bg-primary text-white;
-    @apply hover:bg-primary-400;
+  .btn-white {
+    @apply bg-white text-primary;
+    @apply hover:bg-gray-100;
   }
 
-  /* Jurri Card Styles - Dark theme cards */
+  /* Cooper&Hunter Card Styles */
   .card {
-    @apply bg-white rounded-2xl shadow-card transition-all duration-300;
+    @apply bg-white rounded-lg shadow-card transition-all duration-300;
   }
 
   .card-dark {
-    @apply bg-primary-400 text-white rounded-2xl;
+    @apply bg-primary text-white rounded-lg;
     @apply transition-all duration-300;
   }
 
@@ -162,40 +172,44 @@
     @apply card card-hover cursor-pointer;
   }
 
-  /* Premium Card - with subtle glow on hover */
-  .card-premium {
-    @apply bg-primary-400 text-white rounded-2xl;
-    @apply border border-white/5;
-    @apply transition-all duration-300 ease-out;
+  /* Image overlay card (for projects grid) */
+  .card-overlay {
+    @apply relative overflow-hidden rounded-lg;
   }
 
-  .card-premium:hover {
-    @apply -translate-y-1 border-accent/20;
-    box-shadow:
-      0 20px 25px -5px rgba(0,0,0,.2),
-      0 0 40px rgba(197, 167, 136, 0.1);
+  .card-overlay::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10;
+  }
+
+  .card-overlay-content {
+    @apply absolute bottom-0 left-0 right-0 p-6 z-20 text-white;
   }
 
   /* Badge/Pill Styles */
   .badge {
-    @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-medium;
+    @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide;
   }
 
-  .badge-gold {
-    @apply bg-accent/20 text-accent;
-  }
-
-  .badge-dark {
+  .badge-primary {
     @apply bg-primary text-white;
+  }
+
+  .badge-accent {
+    @apply bg-accent text-white;
+  }
+
+  .badge-light {
+    @apply bg-gray-100 text-gray-700;
   }
 
   /* Section Styles */
   .section {
-    @apply py-20 lg:py-24;
+    @apply py-16 lg:py-20;
   }
 
   .section-lg {
-    @apply py-24 lg:py-32;
+    @apply py-20 lg:py-28;
   }
 
   .section-dark {
@@ -203,15 +217,19 @@
   }
 
   .section-navy {
-    @apply bg-primary-400 text-white;
+    @apply bg-primary text-white;
   }
 
   .section-light {
-    @apply bg-cream;
+    @apply bg-gray-50;
   }
 
-  .section-cream {
-    @apply bg-cream-warm/20;
+  .section-white {
+    @apply bg-white;
+  }
+
+  .section-light-blue {
+    @apply bg-blue-50/50;
   }
 
   /* Container */
@@ -224,28 +242,32 @@
   }
 
   .container-wide {
-    @apply mx-auto max-w-[1600px] px-6 lg:px-12;
+    @apply mx-auto max-w-[1400px] px-6 lg:px-12;
   }
 
-  /* Jurri Heading Styles */
+  /* Cooper&Hunter Heading Styles */
   .heading-display {
-    font-family: var(--font-frank-ruhl), Georgia, serif;
-    @apply text-4xl md:text-5xl lg:text-6xl font-light tracking-tight;
+    font-family: var(--font-montserrat), var(--font-inter), system-ui, sans-serif;
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight;
   }
 
   .heading-section {
-    font-family: var(--font-frank-ruhl), Georgia, serif;
-    @apply text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight;
+    font-family: var(--font-montserrat), var(--font-inter), system-ui, sans-serif;
+    @apply text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight;
   }
 
   .heading-card {
-    font-family: var(--font-frank-ruhl), Georgia, serif;
-    @apply text-xl md:text-2xl font-medium;
+    font-family: var(--font-montserrat), var(--font-inter), system-ui, sans-serif;
+    @apply text-lg md:text-xl font-semibold;
   }
 
   /* Section Label (small caps above headings) */
   .section-label {
-    @apply text-sm font-medium tracking-wider uppercase text-accent;
+    @apply text-xs font-semibold tracking-widest uppercase text-primary;
+  }
+
+  .section-label-light {
+    @apply text-xs font-semibold tracking-widest uppercase text-white/80;
   }
 
   /* Text utilities */
@@ -259,53 +281,71 @@
 
   /* Link styles */
   .link {
-    @apply text-accent hover:text-accent-300 transition-colors underline-offset-4 hover:underline;
+    @apply text-primary hover:text-primary-600 transition-colors underline-offset-4 hover:underline;
+  }
+
+  .link-accent {
+    @apply text-accent hover:text-accent-600 transition-colors underline-offset-4 hover:underline;
   }
 
   .link-subtle {
     @apply text-muted-foreground hover:text-foreground transition-colors;
   }
 
-  /* Link with animated underline */
-  .link-underline {
-    @apply relative text-accent transition-colors;
+  /* Link with arrow */
+  .link-arrow {
+    @apply inline-flex items-center gap-2 text-primary font-semibold transition-colors;
   }
 
-  .link-underline::after {
-    content: '';
-    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-accent;
-    transition: width 0.3s cubic-bezier(0.25, 0.1, 0.25, 1.0);
+  .link-arrow:hover {
+    @apply text-primary-600;
   }
 
-  .link-underline:hover::after {
-    @apply w-full;
+  .link-arrow svg {
+    @apply transition-transform;
+  }
+
+  .link-arrow:hover svg {
+    @apply translate-x-1;
   }
 
   /* Navigation link */
   .nav-link {
-    @apply text-white/80 hover:text-accent transition-colors font-medium;
+    @apply text-gray-700 hover:text-primary transition-colors font-medium;
+  }
+
+  .nav-link-white {
+    @apply text-white/90 hover:text-white transition-colors font-medium;
   }
 
   .nav-link-active {
-    @apply text-accent font-semibold;
+    @apply text-primary font-semibold;
   }
 
   /* Grid layouts */
   .grid-services {
-    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6;
   }
 
   .grid-features {
     @apply grid grid-cols-1 md:grid-cols-2 gap-8;
   }
 
+  .grid-projects {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4;
+  }
+
   /* Icon containers */
   .icon-container {
-    @apply flex items-center justify-center w-12 h-12 rounded-xl bg-accent/10 text-accent;
+    @apply flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 text-primary;
   }
 
   .icon-container-lg {
-    @apply flex items-center justify-center w-16 h-16 rounded-2xl bg-accent/10 text-accent;
+    @apply flex items-center justify-center w-16 h-16 rounded-xl bg-primary/10 text-primary;
+  }
+
+  .icon-container-white {
+    @apply flex items-center justify-center w-12 h-12 rounded-lg bg-white/10 text-white;
   }
 }
 
@@ -319,59 +359,57 @@
     @apply opacity-100 translate-y-0 transition-all duration-700;
   }
 
-  /* Text gradient - gold accent */
-  .text-gradient-gold {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent via-accent-300 to-accent;
+  /* Text gradient - blue to red */
+  .text-gradient-brand {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary to-accent;
   }
 
-  /* Hover glow effect - gold glow */
-  .hover-glow {
-    @apply transition-shadow duration-300;
+  /* Hover effects */
+  .hover-lift {
+    @apply transition-transform duration-300;
   }
 
-  .hover-glow:hover {
-    box-shadow: 0 0 40px rgba(197, 167, 136, 0.2);
+  .hover-lift:hover {
+    @apply -translate-y-1;
   }
 
   /* Glassmorphism utilities */
   .glass {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .glass-dark {
-    background: rgba(13, 28, 41, 0.8);
+    background: rgba(0, 51, 102, 0.95);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
   }
 
   /* Premium input styling */
   .input-premium {
-    @apply w-full px-4 py-3 rounded-lg border border-border;
+    @apply w-full px-4 py-3 rounded-md border border-gray-300;
     @apply bg-white transition-all duration-200 ease-out;
-    @apply focus:border-accent focus:ring-2 focus:ring-accent/20;
+    @apply focus:border-primary focus:ring-2 focus:ring-primary/20;
     @apply focus:outline-none;
   }
 
   .input-dark {
-    @apply w-full px-4 py-3 rounded-lg border border-white/10;
-    @apply bg-primary-400 text-white placeholder:text-white/50;
+    @apply w-full px-4 py-3 rounded-md border border-white/20;
+    @apply bg-white/10 text-white placeholder:text-white/50;
     @apply transition-all duration-200 ease-out;
-    @apply focus:border-accent focus:ring-2 focus:ring-accent/20;
+    @apply focus:border-white focus:ring-2 focus:ring-white/20;
     @apply focus:outline-none;
   }
 
   /* Focus ring */
   .focus-ring {
-    @apply focus:outline-none focus:ring-2 focus:ring-accent/50 focus:ring-offset-2;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2;
   }
 
-  /* Selection colors - gold accent */
+  /* Selection colors - blue */
   ::selection {
-    background-color: rgba(197, 167, 136, 0.3);
+    background-color: rgba(0, 51, 102, 0.2);
     color: var(--color-primary);
   }
 
@@ -382,17 +420,17 @@
   }
 
   ::-webkit-scrollbar-track {
-    background-color: var(--color-cream);
+    background-color: #f5f5f5;
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: var(--color-border);
+    background-color: #d4d4d4;
     border-radius: 5px;
-    border: 2px solid var(--color-cream);
+    border: 2px solid #f5f5f5;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background-color: var(--color-accent);
+    background-color: var(--color-primary);
   }
 
   /* Smooth reveal animations */

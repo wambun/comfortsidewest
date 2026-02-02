@@ -1,22 +1,22 @@
-/* Comfortside West Color Theme - Jurri Template Inspired */
+/* Comfortside West Color Theme - Cooper&Hunter US Branding */
 const colors = {
-  // Primary: Deep Navy (from Jurri template)
+  // Primary: Deep Blue (Cooper&Hunter brand blue)
   primary: {
-    lighter: '#1b273a',
-    light: '#132030',
-    main: '#0d1c29',
-    dark: '#091318',
-    darker: '#050a0d',
+    lighter: '#1a4d7c',
+    light: '#0d4070',
+    main: '#003366',      // C&H Deep Blue
+    dark: '#002855',
+    darker: '#001a3a',
   },
-  // Accent: Warm Gold (from Jurri template - CTAs, links, highlights)
+  // Accent: C&H Red (Cooper&Hunter brand red)
   accent: {
-    lighter: '#e8d9c6',
-    light: '#d4c0a5',
-    main: '#c5a788',
-    dark: '#a68a6a',
-    darker: '#87704f',
+    lighter: '#e85a6b',
+    light: '#d93a4c',
+    main: '#C41E3A',      // C&H Red
+    dark: '#a31830',
+    darker: '#821326',
   },
-  // Success: Soft green for success states
+  // Success: Green for success states
   success: {
     lighter: '#d1fae5',
     light: '#a7f3d0',
@@ -32,21 +32,21 @@ const colors = {
     dark: '#64748b',
     darker: '#475569',
   },
-  // Background colors
+  // Background colors (light/white theme)
   secondary: {
     lighter: '#ffffff',
-    light: '#f9f9f9',
-    main: '#f1f5f9',
-    dark: '#e8eded',
-    darker: '#d1d5db',
+    light: '#fafafa',
+    main: '#f5f5f5',
+    dark: '#e5e5e5',
+    darker: '#d4d4d4',
   },
-  // Cream tones (warm light backgrounds)
-  cream: {
-    lighter: '#fefdfb',
-    light: '#faf8f5',
-    main: '#ead3bc',
-    dark: '#d4bc9f',
-    darker: '#bea582',
+  // Light blue tints (for subtle backgrounds)
+  lightBlue: {
+    lighter: '#f0f7ff',
+    light: '#e6f2ff',
+    main: '#dbeafe',
+    dark: '#bfdbfe',
+    darker: '#93c5fd',
   },
 };
 

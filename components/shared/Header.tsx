@@ -44,19 +44,19 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       {/* Top Contact Bar */}
-      <div className="bg-primary text-white/80 text-sm">
+      <div className="bg-primary text-white/90 text-sm">
         <div className="container-main flex items-center justify-between py-2">
           <div className="flex items-center gap-6">
             <a
               href={`tel:${contactInfo.phone}`}
-              className="flex items-center gap-2 hover:text-accent transition-colors"
+              className="flex items-center gap-2 hover:text-white transition-colors"
             >
               <Phone className="w-4 h-4" />
               <span>{contactInfo.phone}</span>
             </a>
             <a
               href={`mailto:${contactInfo.email}`}
-              className="hidden sm:flex items-center gap-2 hover:text-accent transition-colors"
+              className="hidden sm:flex items-center gap-2 hover:text-white transition-colors"
             >
               <Mail className="w-4 h-4" />
               <span>{contactInfo.email}</span>
@@ -64,7 +64,7 @@ const Header = () => {
           </div>
           <Link
             href={headerCTA.href}
-            className="flex items-center gap-2 text-accent hover:text-accent-300 transition-colors font-medium"
+            className="flex items-center gap-2 text-white hover:text-white/80 transition-colors font-medium"
           >
             <span>{headerCTA.title}</span>
             <ChevronDown className="w-4 h-4 rotate-[-90deg]" />
@@ -75,7 +75,7 @@ const Header = () => {
       {/* Main Navigation */}
       <nav
         className={cn(
-          'bg-primary border-b border-white/10 transition-all duration-300',
+          'bg-white border-b border-gray-200 transition-all duration-300',
           isScrolled && 'shadow-lg'
         )}
       >
@@ -83,13 +83,14 @@ const Header = () => {
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="relative">
-                <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-xl bg-accent flex items-center justify-center">
-                  <span className="text-primary font-bold text-lg lg:text-xl">CW</span>
-                </div>
+              <div className="flex items-center">
+                <span className="text-3xl lg:text-4xl font-bold">
+                  <span className="text-accent">C</span>
+                  <span className="text-primary">H</span>
+                </span>
               </div>
               <div className="hidden sm:block">
-                <span className="text-white font-heading text-xl lg:text-2xl font-medium group-hover:text-accent transition-colors">
+                <span className="text-primary font-bold text-lg lg:text-xl group-hover:text-primary/80 transition-colors">
                   Comfortside West
                 </span>
               </div>
@@ -107,10 +108,10 @@ const Header = () => {
                   <Link
                     href={link.href}
                     className={cn(
-                      'flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-lg transition-colors',
+                      'flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-md transition-colors',
                       pathname === link.href || pathname.startsWith(link.href + '/')
-                        ? 'text-accent'
-                        : 'text-white/80 hover:text-white hover:bg-white/5'
+                        ? 'text-primary bg-primary/5'
+                        : 'text-gray-700 hover:text-primary hover:bg-gray-50'
                     )}
                   >
                     {link.title}
@@ -134,21 +135,21 @@ const Header = () => {
                         transition={{ duration: 0.2 }}
                         className="absolute top-full left-0 pt-2 w-64"
                       >
-                        <div className="bg-primary-400 rounded-xl border border-white/10 shadow-xl overflow-hidden">
+                        <div className="bg-white rounded-lg border border-gray-200 shadow-xl overflow-hidden">
                           {link.children.map((child) => (
                             <Link
                               key={child.href}
                               href={child.href}
                               className={cn(
-                                'block px-4 py-3 hover:bg-white/5 transition-colors',
-                                pathname === child.href && 'bg-white/5'
+                                'block px-4 py-3 hover:bg-gray-50 transition-colors border-b border-gray-100 last:border-b-0',
+                                pathname === child.href && 'bg-primary/5'
                               )}
                             >
-                              <span className="block text-white font-medium text-sm">
+                              <span className="block text-gray-900 font-medium text-sm">
                                 {child.title}
                               </span>
                               {child.description && (
-                                <span className="block text-white/60 text-xs mt-0.5">
+                                <span className="block text-gray-500 text-xs mt-0.5">
                                   {child.description}
                                 </span>
                               )}
@@ -166,7 +167,7 @@ const Header = () => {
             <div className="hidden lg:flex items-center gap-4">
               <Link
                 href={headerCTA.href}
-                className="btn bg-accent text-primary hover:bg-accent-300 px-6 py-2.5 text-sm font-semibold rounded-lg transition-all duration-200"
+                className="inline-flex items-center justify-center bg-primary text-white hover:bg-primary-600 px-6 py-2.5 text-sm font-semibold rounded-md transition-all duration-200 uppercase tracking-wide"
               >
                 {headerCTA.title}
               </Link>
@@ -175,7 +176,7 @@ const Header = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 text-white hover:text-accent transition-colors"
+              className="lg:hidden p-2 text-gray-700 hover:text-primary transition-colors"
               aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
             >
               {isMobileMenuOpen ? (
@@ -196,7 +197,7 @@ const Header = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 top-[104px] bg-primary z-40 lg:hidden overflow-y-auto"
+            className="fixed inset-0 top-[104px] bg-white z-40 lg:hidden overflow-y-auto"
           >
             <div className="container-main py-6">
               <nav className="space-y-1">
@@ -211,10 +212,10 @@ const Header = () => {
                             )
                           }
                           className={cn(
-                            'flex items-center justify-between w-full px-4 py-3 text-lg font-medium rounded-lg transition-colors',
+                            'flex items-center justify-between w-full px-4 py-3 text-lg font-medium rounded-md transition-colors',
                             activeDropdown === link.href
-                              ? 'text-accent bg-white/5'
-                              : 'text-white/80'
+                              ? 'text-primary bg-primary/5'
+                              : 'text-gray-700'
                           )}
                         >
                           {link.title}
@@ -240,8 +241,8 @@ const Header = () => {
                                     key={child.href}
                                     href={child.href}
                                     className={cn(
-                                      'block px-4 py-2 rounded-lg text-white/70 hover:text-white hover:bg-white/5 transition-colors',
-                                      pathname === child.href && 'text-accent bg-white/5'
+                                      'block px-4 py-2 rounded-md text-gray-600 hover:text-primary hover:bg-gray-50 transition-colors',
+                                      pathname === child.href && 'text-primary bg-primary/5'
                                     )}
                                   >
                                     {child.title}
@@ -256,10 +257,10 @@ const Header = () => {
                       <Link
                         href={link.href}
                         className={cn(
-                          'block px-4 py-3 text-lg font-medium rounded-lg transition-colors',
+                          'block px-4 py-3 text-lg font-medium rounded-md transition-colors',
                           pathname === link.href
-                            ? 'text-accent bg-white/5'
-                            : 'text-white/80 hover:text-white hover:bg-white/5'
+                            ? 'text-primary bg-primary/5'
+                            : 'text-gray-700 hover:text-primary hover:bg-gray-50'
                         )}
                       >
                         {link.title}
@@ -270,10 +271,10 @@ const Header = () => {
               </nav>
 
               {/* Mobile CTA */}
-              <div className="mt-8 pt-6 border-t border-white/10">
+              <div className="mt-8 pt-6 border-t border-gray-200">
                 <Link
                   href={headerCTA.href}
-                  className="btn bg-accent text-primary hover:bg-accent-300 w-full justify-center py-3 text-base font-semibold rounded-lg transition-all duration-200"
+                  className="inline-flex items-center justify-center bg-primary text-white hover:bg-primary-600 w-full py-3 text-base font-semibold rounded-md transition-all duration-200 uppercase tracking-wide"
                 >
                   {headerCTA.title}
                 </Link>
@@ -283,14 +284,14 @@ const Header = () => {
               <div className="mt-6 space-y-3">
                 <a
                   href={`tel:${contactInfo.phone}`}
-                  className="flex items-center gap-3 px-4 py-2 text-white/70 hover:text-accent transition-colors"
+                  className="flex items-center gap-3 px-4 py-2 text-gray-600 hover:text-primary transition-colors"
                 >
                   <Phone className="w-5 h-5" />
                   <span>{contactInfo.phone}</span>
                 </a>
                 <a
                   href={`mailto:${contactInfo.email}`}
-                  className="flex items-center gap-3 px-4 py-2 text-white/70 hover:text-accent transition-colors"
+                  className="flex items-center gap-3 px-4 py-2 text-gray-600 hover:text-primary transition-colors"
                 >
                   <Mail className="w-5 h-5" />
                   <span>{contactInfo.email}</span>

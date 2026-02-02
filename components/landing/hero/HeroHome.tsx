@@ -2,26 +2,43 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowRight, ChevronDown } from 'lucide-react';
-import { AnimatedGradientBackground } from './AnimatedGradientBackground';
+import { ArrowRight } from 'lucide-react';
+import Image from 'next/image';
 
 export function HeroHome() {
   return (
-    <section className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
-      {/* Animated gradient background */}
-      <AnimatedGradientBackground />
+    <section className="relative min-h-[600px] lg:min-h-[700px] flex items-center overflow-hidden bg-primary">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0">
+        <Image
+          src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2070"
+          alt="HVAC Systems"
+          fill
+          className="object-cover opacity-30"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/95 to-primary/80" />
+      </div>
 
       {/* Content */}
-      <div className="relative z-10 container-main">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Label */}
+      <div className="relative z-10 container-main py-20 lg:py-28">
+        <div className="max-w-3xl">
+          {/* Logo Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.5 }}
+            className="flex items-center gap-3 mb-8"
           >
-            <span className="inline-block text-accent font-medium text-sm tracking-[0.2em] uppercase mb-6">
-              Wholesale HVAC Distribution
+            <div className="flex items-center">
+              <span className="text-4xl font-bold">
+                <span className="text-accent">C</span>
+                <span className="text-white">H</span>
+              </span>
+            </div>
+            <div className="h-10 w-px bg-white/30" />
+            <span className="text-white/80 text-sm font-medium tracking-wide uppercase">
+              Authorized Distributor
             </span>
           </motion.div>
 
@@ -29,69 +46,86 @@ export function HeroHome() {
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-heading font-semibold text-white tracking-tight leading-[1.05] mb-8"
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
           >
-            The West's Premier
+            Premium HVAC
             <br />
-            <span className="text-gradient-gold">HVAC Distributor</span>
+            <span className="text-white">Distribution for the</span>
+            <br />
+            <span className="text-accent">Western United States</span>
           </motion.h1>
 
           {/* Tagline */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="text-lg sm:text-xl text-white/70 max-w-2xl mx-auto mb-12 leading-relaxed"
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-lg sm:text-xl text-white/80 max-w-2xl mb-10 leading-relaxed"
           >
-            Premium ductless systems from Cooper&Hunter, Olmo, and Bravo.
-            <br className="hidden sm:block" />
-            Competitive pricing. 48-hour shipping. Dedicated dealer support.
+            Your trusted source for Cooper&Hunter, Olmo, and Bravo ductless systems.
+            Competitive wholesale pricing, fast shipping, and dedicated dealer support.
           </motion.p>
 
-          {/* CTA */}
+          {/* CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="flex flex-col sm:flex-row gap-4"
           >
             <Link
               href="/dealer-program"
-              className="group inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent-300 text-primary font-semibold text-lg px-10 py-4 rounded-full transition-all duration-300 hover:shadow-[0_0_40px_rgba(197,167,136,0.3)]"
+              className="group inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent-600 text-white font-semibold text-base px-8 py-4 rounded-md transition-all duration-300 uppercase tracking-wide"
             >
               Become a Dealer
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
               href="/products"
-              className="inline-flex items-center justify-center gap-2 border-2 border-white/20 hover:border-white/40 text-white font-medium text-lg px-10 py-4 rounded-full transition-all duration-300 hover:bg-white/5"
+              className="inline-flex items-center justify-center gap-2 border-2 border-white/30 hover:border-white/60 text-white font-semibold text-base px-8 py-4 rounded-md transition-all duration-300 uppercase tracking-wide hover:bg-white/10"
             >
               Browse Products
             </Link>
           </motion.div>
+
+          {/* Trust Indicators */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="mt-12 pt-8 border-t border-white/10"
+          >
+            <div className="flex flex-wrap gap-8 text-white/60 text-sm">
+              <div className="flex items-center gap-2">
+                <svg className="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+                <span>500+ Dealer Partners</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <svg className="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+                <span>48-Hour Shipping</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <svg className="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+                <span>Full Warranty Support</span>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-      >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-          className="flex flex-col items-center gap-2 text-white/40"
-        >
-          <span className="text-xs tracking-widest uppercase">Scroll</span>
-          <ChevronDown className="w-5 h-5" />
-        </motion.div>
-      </motion.div>
-
-      {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-cream to-transparent pointer-events-none" />
+      {/* Decorative Element - C&H Logo watermark */}
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 opacity-5 pointer-events-none hidden lg:block">
+        <span className="text-[400px] font-bold text-white leading-none">
+          CH
+        </span>
+      </div>
     </section>
   );
 }
