@@ -1,5 +1,6 @@
 import {
   HeroHome,
+  TrustSection,
   ServicesSection,
   BrandsSection,
   TestimonialsSection,
@@ -12,6 +13,7 @@ export default function Home() {
   return (
     <>
       <HeroHome />
+      <TrustSection />
       <ServicesSection />
       <BrandsSection />
       <WhyChooseUsSection />
